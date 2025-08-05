@@ -1,3 +1,31 @@
 body {
     background-color: black;
+    color: #FFE9F9;
+}
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+h4 {
+
+}
+p {
+
+}
+nav {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #FFE9F9;
+}
+main {
+    width: 90%;
+    margin: auto;
+}
+footer {
+
 }
