@@ -27,12 +27,101 @@ h4 {
 }
 p, li {
     font-size: 150%;
-
 }
+/*this is for the toggle switch*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFE9F9;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border: #FFE9F9 solid 2px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 2.5px;
+  background-color: #F35A9C;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 10rem;
+}
+
+.slider.round:before {
+  border-radius: 70%;
+}
+/*end toggle switch*/
 nav {
     border-style: solid;
     border-width: 2px;
     border-color: #FFE9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+nav ul li {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #FFE9F9;
+    position: relative;
+    display: inline-block; /* Ensures transform works as expected */
+    transition: transform 0.5s ease;
+
+}
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #FFE9F9;
+    font-weight: bold;
+    transform: translateY(-10px); /* Move up smoothly */
 }
 main {
     width: 90%;
