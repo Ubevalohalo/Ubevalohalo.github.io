@@ -164,3 +164,15 @@ footer {
     animation: none;
   }
 }
+
+/* New styles for the typewriter effect */
+.main-title, .subtitle, #titleSection h2, #titleSection h3 {
+    visibility: hidden;
+    border-right: 2px solid #555;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.subtitle, #titleSection h3 {
+    margin-top: 1rem;
+}

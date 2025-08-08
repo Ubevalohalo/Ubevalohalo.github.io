@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine!!</title>
+    <!-- The external styles.css file is now the only source for styling -->
     <link rel="stylesheet" href="styles.css">
-    <!--this is for the google font for p-->
+    <!-- This is for the google font for p -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
-    <!--google font for headers-->
+    <!-- Google font for headers -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,9 +27,9 @@
         </div>
     </nav>
     <main>
-        <section id="welcome">
-            <h1 class="typewriter">Welcome to my Portfolio!</h1>
-            <h3 class="typewriter">- Isabella Pena</h3>
+        <section class="welcome">
+            <h1 class="main-title">Welcome to my Portfolio!</h1>
+            <h3 class="subtitle">- Isabella Pena</h3>
         </section>
         <section id="viewProjects">
             <h2>Adaptive. Creative. Attentive.</h2>
@@ -61,6 +62,7 @@
                 “What should I apply myself to?”
                 </p>
             </div>
+            <!-- REMOVED: This extra div was causing a layout issue -->
             <div id="bottom">
                 <p>Once I started to learn front-end development, I immediately felt that passion and knew that this is what I wanted pursue.
                 <br><br>
@@ -88,9 +90,5 @@
         </div>
     </footer>
 </body>
-<!--
-include script tag
-replace nav and footer javascript
-
--->
+<script src="script.js"></script>
 </html>
