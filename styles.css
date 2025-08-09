@@ -159,14 +159,6 @@ footer {
 .typewriter.nocaret::after {
   border-right: 0;
 }
-
-
-@media (prefers-reduced-motion) {
-  .typewriter::after {
-    animation: none;
-  }
-}
-
 /* New styles for the typewriter effect */
 .main-title, .subtitle, #titleSection h2, #titleSection h3 {
     visibility: hidden;
