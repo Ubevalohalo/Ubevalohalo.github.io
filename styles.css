@@ -9,7 +9,6 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-fam22ily: "Lora", serif;/*i gotta think about this*/
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
@@ -127,6 +126,9 @@ main {
     width: 90%;
     margin: auto;
 }
+.welcome {
+  margin: 20rem 0rem 20rem 0rem;
+}
 footer {
 
 }
@@ -176,3 +178,43 @@ footer {
 .subtitle, #titleSection h3 {
     margin-top: 1rem;
 }
+/* NEW: Start page popup styles */
+#startPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#startPopup h1 {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+}
+
+#startPopup a {
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    border: 2px solid #FFE9F9;
+    background-color: transparent;
+    color: #FFE9F9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6rem;
+    text-decoration: none;
+}
+
+#startPopup a:hover {
+    background-color: #F35A9C;
+    color: black;
+    transform: scale(1.1);
+}
+
