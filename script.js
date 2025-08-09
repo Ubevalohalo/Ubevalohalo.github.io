@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.style.visibility = 'visible';
 
         let i = 0;
-        const speed = 100; /* The speed/duration of the effect in milliseconds */
+        const speed = 150; /* The speed/duration of the effect in milliseconds */
 
         // This is the recursive function that types out one character at a time.
         function type() {

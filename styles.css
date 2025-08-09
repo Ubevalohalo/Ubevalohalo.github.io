@@ -8,22 +8,22 @@ body {
 
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Lora", serif;
+    font-fam22ily: "Lora", serif;/*i gotta think about this*/
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
 h1 {
-    font-size: 800%;
+    font-size: 400%;
 }
 h2 {
-    font-size: 500%;
-}
-h3 {
     font-size: 300%;
 }
-h4 {
+h3 {
     font-size: 200%;
+}
+h4 {
+    font-size: 100%;
 }
 p, li {
     font-size: 150%;
