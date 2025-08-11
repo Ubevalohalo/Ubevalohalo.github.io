@@ -2,10 +2,14 @@ body {
     background-color: black;
     color: #FFE9F9;
     font-family: "Source Code Pro", monospace;
-    font-weight: 400; /* Or 300 for even thinner */
+    font-weight: 300; /* Or 300 for even thinner */
     font-optical-sizing: auto;
     font-style: normal;
 
+}
+#startPopup {
+    font-fam11ily: "Source Code Pro", monospace;
+    font-weight: 100;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
