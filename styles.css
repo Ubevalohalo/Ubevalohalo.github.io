@@ -55,7 +55,6 @@ p, li {
   transition: .4s;
   border: #FFE9F9 solid 2px;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -67,26 +66,21 @@ p, li {
   -webkit-transition: .5s;
   transition: .5s;
 }
-
 input:checked + .slider {
   background-color: black;
 }
-
 input:focus + .slider {
   box-shadow: 0 0 1px black;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
 /* Rounded sliders */
 .slider.round {
   border-radius: 10rem;
 }
-
 .slider.round:before {
   border-radius: 70%;
 }
@@ -148,12 +142,15 @@ footer #connections div {
 footer #connections div a{
   text-decoration: none;
   color: #FFE9F9;
+  
 }
 footer #connections div:hover {
   text-decoration: underline;
   color: #FFE9F9;
   font-weight: bold;
   transform: translateY(-30px);
+  display: inline-block; /* Ensures transform works as expected */
+    transition: transform 0.5s ease;
 }
 footer #connections div img{
   width: 8rem;
