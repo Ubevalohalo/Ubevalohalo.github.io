@@ -92,7 +92,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: black;
 }
 nav ul {
     list-style-type: none;
