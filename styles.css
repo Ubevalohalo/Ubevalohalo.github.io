@@ -8,7 +8,7 @@ body {
 
 }
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
 }
 h1 {
@@ -128,6 +128,7 @@ main {
 .welcome {
   margin: 20rem 0rem 20rem 0rem;
 }
+/*----------------FOOTER SECTION*/
 footer {
   width: 90%;
   border-style: solid;
@@ -138,9 +139,26 @@ footer {
 }
 footer #connections {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
 }
+footer #connections div {
+  padding: 5rem;
+}
+footer #connections div a{
+  text-decoration: none;
+  color: #FFE9F9;
+}
+footer #connections div:hover {
+  text-decoration: underline;
+  color: #FFE9F9;
+  font-weight: bold;
+  transform: translateY(-30px);
+}
+footer #connections div img{
+  width: 8rem;
+}
+/*----------------END FOOTER SECTION*/
 #startPopup {
     position: fixed;
     top: 0;
