@@ -24,6 +24,19 @@
             color: black;
             transform: scale(1.1);
         }
+        #workingWithMe{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        #workingWithMe .indexImages{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        #workingWithMe .workingText{
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
     </style>
 </head>
 <body>    
@@ -52,12 +65,12 @@
             <h3>Front-End Developer</h3>
             <a href="projects.html" id="projectButton">View my Projects</a>
         </section>
+        <h2>Working with Me</h2>
         <section id="workingWithMe">
-            <h2>Working with Me</h2>
             <div class="indexImages">
                 <img src="imagePlaceholder.png">
             </div>
-            <div>
+            <div class="workingText">
                 <h3>Strong Leader. Team Player.</h3>
                 <p>I prioritize clear communication, organization, collaboration, and respect.
                 <br><br>
