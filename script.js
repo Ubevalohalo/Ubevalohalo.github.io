@@ -1,3 +1,14 @@
+/*NOTES:
+- I want to make a function that underlines the page user is currently on
+
+
+
+
+*/
+
+
+
+
 // Wait for the entire page to load before running the script
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -7,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (callback) callback();
             return;
         }
-
         const textToType = element.textContent;
         element.textContent = "";
         element.style.visibility = 'visible';
