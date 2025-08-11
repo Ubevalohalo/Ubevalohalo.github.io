@@ -7,7 +7,24 @@
     <!-- The external styles.css file is now the only source for styling -->
     <link rel="stylesheet" href="styles.css">
     <!-- This is for the google font-->
-
+    <style>
+        #projectButton {
+            padding: 1rem 3rem;
+            font-size: 2rem;
+            border: 2px solid #FFE9F9;
+            background-color: transparent;
+            color: #FFE9F9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 6rem;
+            text-decoration: none;
+        }
+        #projectButton:hover {
+            background-color: #F35A9C;
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>    
     <nav>
@@ -33,12 +50,12 @@
         <section id="viewProjects">
             <h2>Adaptive. Creative. Attentive.</h2>
             <h3>Front-End Developer</h3>
-            <a href="projects.html">View my Projects</a>
+            <a href="projects.html" id="projectButton">View my Projects</a>
         </section>
         <section id="workingWithMe">
             <h2>Working with Me</h2>
             <div class="indexImages">
-                <img><!--insert an image-->
+                <img src="imagePlaceholder.png">
             </div>
             <div>
                 <h3>Strong Leader. Team Player.</h3>
@@ -53,7 +70,7 @@
                 <p>I never expected coding to change my life—until a friend’s older sister told me to start learning HTML.</p>
             </div>
             <div id="left">
-                <img>
+                <img src="imagePlaceholder.png">
             </div>
             <div id="right">
                 <p>I was lost in what I wanted to do. I knew I was ambitious and capable of anything I applied myself to, but there lingered the question:
