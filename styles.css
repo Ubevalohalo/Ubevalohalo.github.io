@@ -7,12 +7,8 @@ body {
     font-style: normal;
 
 }
-#startPopup {
-    font-fam11ily: "Source Code Pro", monospace;
-    font-weight: 100;
-}
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 500;
     font-style: normal;
 }
 h1 {
@@ -133,47 +129,18 @@ main {
   margin: 20rem 0rem 20rem 0rem;
 }
 footer {
-
+  width: 90%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFE9F9;
+  margin: auto;
+  text-align: center;
 }
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+footer #connections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.typewriter {
-  --caret: currentcolor;
-}
-
-.typewriter::before {
-  content: "";
-  animation: typing 13.5s infinite;
-}
-
-.typewriter::after {
-  content: "";
-  border-right: 1px solid var(--caret);
-  animation: blink 0.5s linear infinite;
-}
-
-.typewriter.thick::after {
-  border-right: 1ch solid var(--caret);
-}
-
-.typewriter.nocaret::after {
-  border-right: 0;
-}
-/* New styles for the typewriter effect */
-.main-title, .subtitle, #titleSection h2, #titleSection h3 {
-    visibility: hidden;
-    border-right: 2px solid #555;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.subtitle, #titleSection h3 {
-    margin-top: 1rem;
-}
-/* NEW: Start page popup styles */
 #startPopup {
     position: fixed;
     top: 0;
@@ -189,12 +156,10 @@ footer {
     opacity: 1;
     transition: opacity 1s ease-out;
 }
-
 #startPopup h1 {
     font-size: 8rem;
     margin-bottom: 2rem;
 }
-
 #startPopup a {
     padding: 1rem 3rem;
     font-size: 2rem;
@@ -206,7 +171,6 @@ footer {
     border-radius: 6rem;
     text-decoration: none;
 }
-
 #startPopup a:hover {
     background-color: #F35A9C;
     color: black;
