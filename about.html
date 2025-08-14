@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <script src="script.js"></script>
     <!-- The external styles.css file is now the only source for styling -->
     <link rel="stylesheet" href="styles.css">
     <!-- This is for the google font-->
@@ -73,25 +74,27 @@
             .welcome {
                 margin: 10rem auto;
             }
-            h1 {
-                font-size: 200%;
-            }
-            .welcome .subtitle {
+            #viewProjects a {
                 font-size: 100%;
+                margin: 5rem auto;
             }
-            h2 {
-                font-size: 200%;
-            }
-            h3 {
-                font-size: 100%;
+            #workingWithMe, #myJourney {
+                display: block;
             }
         }
     </style>
 </head>
 <body>    
     <nav>
-        <div id="pages">
-            <ul>
+        <!-- The hamburger menu icon for mobile view -->
+        <div class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- The main navigation links -->
+        <div id="pages" class="nav-links">
+            <ul id="navList">
                 <li><a href="index.html">Start</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -114,7 +117,7 @@
             <h3>Front-End Developer.</h3>
             <a href="projects.html" id="projectButton">View my Projects</a>
         </section>
-        <h2 class="sectionTitle">Working with Me</h2>
+        <h2>Working with Me</h2>
         <section id="workingWithMe">
             <div class="indexImages">
                 <img src="imagePlaceholder.png">
@@ -126,7 +129,7 @@
                 I thrive on problem-solving and guiding teams toward creative, efficient solutions that make a real impact.</p>
             </div>
         </section>
-        <h2 class="sectionTitle">My Journey</h2>
+        <h2>My Journey</h2>
         <section id="myJourney">
             <div id="top">
                 <p>I never expected coding to change my life — until a friend’s older sister recommended that I start learning HTML.</p>

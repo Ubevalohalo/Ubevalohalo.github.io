@@ -168,3 +168,79 @@ footer #connections div img{
 }
 /*----------------END FOOTER SECTION*/
 
+/* Add this new media query at the end of your styles.css file */
+@media (max-width: 480px) {
+    /* Hamburger menu styles */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        cursor: pointer;
+    }
+
+    .hamburger-menu .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #FFE9F9;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Hide the default navigation links */
+    .nav-links {
+        display: none;
+    }
+    /* When the nav is active, show the links in a full-screen overlay */
+    nav.active .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+
+    nav.active .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    /* Animate the hamburger menu into an 'X' */
+    nav.active .hamburger-menu .bar:nth-child(2) {
+        opacity: 0;
+    }
+    nav.active .hamburger-menu .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+    nav.active .hamburger-menu .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -8px);
+    }
+    
+    /* General mobile layout adjustments */
+    nav, main  {
+        margin: 0;
+        padding: 1rem;
+    }
+    
+    nav {
+      justify-content: flex-end; /* Align other nav elements to the right */
+    }
+    h1 {
+      font-size: 200%;
+    }
+    h2 {
+      font-size: 300%;
+    }
+    h3 {
+      font-size: 100%;
+    }
+}
