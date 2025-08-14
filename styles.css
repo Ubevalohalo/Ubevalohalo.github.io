@@ -127,7 +127,8 @@ nav ul li a:hover {
     font-weight: bold;
     transform: translateY(-10px); /* Move up smoothly */
 }
-main, nav, footer {
+
+body, main, footer {
     width: 96%;
     margin: auto;
 }
@@ -222,7 +223,7 @@ footer #connections div img{
     }
     /*END JS SECTION FOR NOW IG*/
     nav, main  {
-        margin: 0;
+        margin: 0 auto;
         padding: 1rem;
     }
     nav {
