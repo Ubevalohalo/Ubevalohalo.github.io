@@ -1,3 +1,9 @@
+/*
+colors:
+light pink: #FFE9F9
+DARK PINK: #F35A9C
+*/
+
 body {
     background-color: black;
     color: #FFE9F9;
@@ -89,17 +95,20 @@ nav {
     border-style: solid;
     border-width: 2px;
     border-color: #FFE9F9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+    text-align: center;
+    background-color: black;
     position: sticky;
     top: 0;
     overflow: hidden;
-    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 nav ul {
     list-style-type: none;
     display: flex;
+    justify-content: space-around;
 }
 nav ul li {
     padding: 0.5rem 2rem 0.5rem 2rem;
@@ -118,8 +127,11 @@ nav ul li a:hover {
     font-weight: bold;
     transform: translateY(-10px); /* Move up smoothly */
 }
+main, nav, footer {
+    width: 96%;
+    margin: auto;
+}
 main {
-    width: 90%;
     margin: auto;
 }
 .welcome {
@@ -127,7 +139,6 @@ main {
 }
 /*----------------FOOTER SECTION*/
 footer {
-  width: 90%;
   border-style: solid;
   border-width: 2px;
   border-color: #FFE9F9;
@@ -137,10 +148,7 @@ footer {
 footer #connections {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-}
-footer #connections div {
-  padding: 5rem;
+  justify-content: space-around;
 }
 footer #connections div a{
   text-decoration: none;

@@ -23,8 +23,10 @@
     transition: opacity 1s ease-out;
 }
 #startPopup h1 {
-    font-size: 8rem;
-    margin-bottom: 2rem;
+    font-size: 6rem;
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
 }
 #startPopup a {
     padding: 1rem 3rem;
@@ -42,7 +44,18 @@
     color: black;
     transform: scale(1.1);
 }
+/*MEDIA QUERY - MOBILE*/
+@media screen and (max-width: 480px) {
+  #startPopup h1 {
+    font-size: 300%;
+    width: 80%;
+    margin: 1rem auto;
+  }
+  #startPopup a {
+        font-size: 100%;
 
+  }
+}
     </style>
 </head>
 <body>

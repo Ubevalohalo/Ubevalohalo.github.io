@@ -6,13 +6,119 @@
     <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        #test {
-            background-color: white;
+        #titleSection {
+            margin: 20rem 0rem;
+        }
+        h1 {
+            font-size: 800%;
+            margin: 0%;
+        }
+        #myWork {
+            text-align: center;
+            margin-top: 50rem;
+        }
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem;
+            gap: 1rem;
+        }
+        .projectCard {
+            background-color: #FFE9F9;
+            width: 10rem;
+            border: 2px solid #FFE9F9;
+            transition: transform 0.5s ease;
+            flex: 1 1 10rem; /* Add this line */
+            max-width: 30rem;
+        }
+        .projectCard img {
+            width: 94%;
+            margin: 3%;
+        }
+        .projectCard h4 {
+            background-color: black;
+            width: 94%;
+            color: #FFE9F9;
+            margin: 3% auto;
+            text-align: center;
+            padding: 3% 0%;
+            font-weight: bold;
+            font-size: 150%;
+        }
+        .projectCard a {
+            text-decoration: none;
+        }
+        .projectCard:hover {
+            transform: translateY(-25px);
         }
     </style>
 </head>
 <body>
-    
+   <nav>
+        <div id="pages">
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+        <div id="viewModes">
+            <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+    <main>
+        <section id="titleSection">
+            <h2>Projects Loading...</h2>
+            <h3>Complete!</h3>
+        </section>
+        <section id="myWork">
+            <h1>My Work</h1>
+            <div id="projects">
+                <div class="projectCard">
+                <a href="projectTemplate.html"><img src="imagePlaceholder.png">
+                <h4>Example Placeholder</h4>
+                </a>
+            </div>
+            <div class="projectCard">
+                <a href="projectTemplate.html"><img src="imagePlaceholder.png">
+                <h4>Example Placeholder</h4>
+                </a>
+            </div>
+            <div class="projectCard">
+                <a href="projectTemplate.html"><img src="imagePlaceholder.png">
+                <h4>Example Placeholder</h4>
+                </a>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2>Let's Connect!</h2>
+        <div id="connections">
+            <div id="email">
+                <a href="mailto:isabellaepena04@Gmail.com">
+                    <img src="emailIconDarkMode.png">
+                    <h3>Email</h3>
+                </a>
+            </div>
+            <div id="linkedIn">
+                <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
+                    <img src="linkedInIconDarkMode.png">
+                    <h3>LinkedIn</h3>
+                </a>
+            </div>
+            <div id="resume">
+                <a href="resume.html">
+                    <img src="resumeIconDarkMode.png">
+                    <h3>View Resume</h3>
+                </a>
+            </div>
+        </div>
+    </footer> 
 </body>
 <script src="script.js"></script>
 </html>
