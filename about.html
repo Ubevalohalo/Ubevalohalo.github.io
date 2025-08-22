@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <script src="script.js"></script>
-    <!-- The external styles.css file is now the only source for styling -->
     <link rel="stylesheet" href="styles.css">
-    <!-- This is for the google font-->
     <style>
+        
+        .welcome {
+            margin: 10rem 0rem 20rem 0rem;
+        }
         #projectButton {
             display: block;
             padding: 1rem 3rem;
@@ -20,7 +22,7 @@
             transition: all 0.3s ease; /* Add this line */
             border-radius: 6rem;
             text-decoration: none;
-            margin: 10rem auto;
+            margin: 6rem auto;
             width: fit-content;
             text-align: center;
         }
@@ -32,9 +34,9 @@
         #viewProjects {
             margin: 50rem auto;
         }
-        #workingWithMe{
+        #workingWithMe {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
             grid-template-rows: 1fr;
             margin-bottom: 50rem;
         }
@@ -46,6 +48,9 @@
             grid-row: 1/2;
             grid-column: 2/3;
         }
+        #workingWithMe h3, #myJourney p {
+            margin-top: 0rem;
+        }
         .sectionTitle {
             text-align: center;
             font-size: 5rem;
@@ -54,7 +59,7 @@
         #myJourney {
             margin-bottom: 50rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
             grid-template-rows: 0.2fr 1fr;
         }
         #myJourney #top {
@@ -68,6 +73,9 @@
         #myJourney #bottom {
             grid-row: 3/4;
             grid-column: 1/3;
+        }
+        #workingWithMe img, #myJourney img{
+            width: 90%
         }
         /*MOBILE SCREEN SIZE*/
         @media screen and (max-width: 480px) {
@@ -85,28 +93,6 @@
     </style>
 </head>
 <body>    
-    <nav>
-        <!-- The hamburger menu icon for mobile view -->
-        <div class="hamburger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <!-- The main navigation links -->
-        <div id="pages" class="nav-links">
-            <ul id="navList">
-                <li><a href="index.html">Start</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </div>
-        <div id="viewModes">
-            <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-            </label>
-        </div>
-    </nav>
     <main>
         <section class="welcome">
             <h1 class="main-title">Welcome to my Portfolio!</h1>
@@ -139,7 +125,7 @@
             </div>
             <div id="right">
                 <p>I was lost in what I wanted to do. I knew I was ambitious and capable of anything I applied myself to, but there lingered the question:
-                <br><br><br>
+                <br><br>
                 “What should I apply myself to?”
                 <br><br>
                 Once I started to learn front-end development, I immediately felt that passion and knew that this is what I wanted pursue.
@@ -151,29 +137,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <h2>Let's Connect!</h2>
-        <div id="connections">
-            <div id="email">
-                <a href="mailto:isabellaepena04@Gmail.com">
-                    <img src="emailIconDarkMode.png">
-                    <h3>Email</h3>
-                </a>
-            </div>
-            <div id="linkedIn">
-                <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
-                    <img src="linkedInIconDarkMode.png">
-                    <h3>LinkedIn</h3>
-                </a>
-            </div>
-            <div id="resume">
-                <a href="resume.html">
-                    <img src="resumeIconDarkMode.png">
-                    <h3>View Resume</h3>
-                </a>
-            </div>
-        </div>
-    </footer>
 </body>
 <script src="script.js"></script>
 </html>

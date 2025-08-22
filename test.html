@@ -3,189 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>About Me</title>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
     <style>
-        #titleSection {
-            margin: 20rem 0rem;
-        }
-        h1 {
-            font-size: 800%;
-            margin: 0%;
-        }
-        #myWork {
-            text-align: center;
-            margin-top: 50rem;
-        }
-        #projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 2rem;
-            gap: 1rem;
-        }
-        .projectCard {
-            background-color: #FFE9F9;
-            width: 10rem;
+        .welcome {
+  margin: 10rem 0rem 20rem 0rem;
+}
+        #projectButton {
+            display: block;
+            padding: 1rem 3rem;
+            font-size: 2rem;
             border: 2px solid #FFE9F9;
-            transition: transform 0.5s ease;
-            flex: 1 1 10rem; /* Add this line */
-            max-width: 30rem;
-        }
-        .projectCard img {
-            width: 94%;
-            margin: 3%;
-        }
-        .projectCard h4 {
-            background-color: black;
-            width: 94%;
+            background-color: transparent;
             color: #FFE9F9;
-            margin: 3% auto;
-            text-align: center;
-            padding: 3% 0%;
-            font-weight: bold;
-            font-size: 150%;
-        }
-        .projectCard a {
+            cursor: pointer;
+            transition: all 0.3s ease; /* Add this line */
+            border-radius: 6rem;
             text-decoration: none;
+            margin: 6rem auto;
+            width: fit-content;
+            text-align: center;
         }
-        .projectCard:hover {
-            transform: translateY(-25px);
+        #projectButton:hover {
+            background-color: #F35A9C;
+            color: black;
+            transform: scale(1.1);
         }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 400%;
+        #viewProjects {
+            margin: 50rem auto;
+        }
+        #workingWithMe {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr;
+            margin-bottom: 50rem;
+        }
+        #workingWithMe .indexImages{
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        #workingWithMe .workingText{
+            grid-row: 1/2;
+            grid-column: 2/3;
+        }
+        #workingWithMe h3, #myJourney p {
+            margin-top: 0rem;
+        }
+        .sectionTitle {
+            text-align: center;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        #myJourney {
+            margin-bottom: 50rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 0.2fr 1fr;
+        }
+        #myJourney #top {
+            grid-row: 1/2;
+            grid-column: 1/3;
+        }
+        #myJourney #left {
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+        #myJourney #bottom {
+            grid-row: 3/4;
+            grid-column: 1/3;
+        }
+        #workingWithMe img, #myJourney img{
+            width: 90%
+        }
+        /*MOBILE SCREEN SIZE*/
+        @media screen and (max-width: 480px) {
+            .welcome {
+                margin: 10rem auto;
+            }
+            #viewProjects a {
+                font-size: 100%;
+                margin: 5rem auto;
+            }
+            #workingWithMe, #myJourney {
+                display: block;
             }
         }
-        /*----------------NEW RESPONSIVE PROJECT CARD STYLES*/
-/*
-  The projects container is now a CSS Grid.
-  This allows for a fixed, uniform grid structure where spacing
-  is consistent regardless of the number of items in the last row.
-*/
-#projects {
-    display: grid;
-    /*
-      Setting a default gap here, which can be overridden by media queries.
-      This value is used on screens larger than 1040px.
-    */
-    gap: 1.5rem;
-    justify-items: center; /* Centers items within their grid cells */
-}
-.projectCard {
-    /*
-      The cards themselves no longer need flex properties like flex-grow.
-      The grid container handles the sizing and placement.
-    */
-    background-color: #FFE9F9;
-    border: 2px solid #FFE9F9;
-    transition: transform 0.5s ease;
-    text-align: center; /* Centers the content inside each card */
-    width: 100%; /* Ensures the card takes up the full width of its grid cell */
-}
-.projectCard img {
-    width: 94%;
-    margin: 3%;
-}
-.projectCard h4 {
-    background-color: black;
-    width: 94%;
-    color: #FFE9F9;
-    margin: 3% auto;
-    text-align: center;
-    padding: 3% 0%;
-    font-weight: bold;
-    font-size: 150%;
-}
-.projectCard:hover {
-    transform: scale(1.05);
-}
-/*----------------PROJECT CARD MEDIA QUERIES FOR CSS GRID*/
-/*
-  Desktop screens and larger: 4 cards per row.
-  The rule now applies to all screens 1040px and up.
-*/
-@media (min-width: 1040px) {
-    #projects {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-/* Tablet screens: 3 cards per row with smaller gaps */
-@media (min-width: 601px) and (max-width: 1039px) {
-    #projects {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem; /* Smaller gaps for tablet view */
-    }
-}
-/*
-  Mobile screens: 1 card per row that fills the width of the container.
-  The gaps are also made smaller.
-*/
-@media (max-width: 600px) {
-    #projects {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 0.5rem; /* Smallest gaps for mobile view */
-    }
-}
-
-
-
     </style>
 </head>
-<body>
-   <nav>
-        <div id="pages">
-            <ul>
-                <li><a href="index.html">Start</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </div>
-        <div id="viewModes">
-            <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-            </label>
-        </div>
-    </nav>
+<body>   
+    <script>
+       createNavBar();
+    </script> 
     <main>
-        <section id="titleSection">
-            <h2>Projects Loading...</h2>
-            <h3>Complete!</h3>
+        <section class="welcome">
+            <h1 class="main-title">Welcome to my Portfolio!</h1>
+            <h3 class="subtitle">- Isabella Pena</h3>
         </section>
-        <section id="myWork">
-            <h1>My Work</h1>
-            <div id="projects">
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
+        <section id="viewProjects">
+            <h2>Adaptive. Creative. Attentive.</h2>
+            <h3>Front-End Developer.</h3>
+            <a href="projects.html" id="projectButton">View my Projects</a>
+        </section>
+        <h2>Working with Me</h2>
+        <section id="workingWithMe">
+            <div>
+                <img src="imagePlaceholder.png">
+            </div>
+            <div class="workingText">
+                <h3>Strong Leader. Team Player.</h3>
+                <p>I prioritize clear communication, organization, collaboration, and respect.
+                <br><br>
+                I thrive on problem-solving and guiding teams toward creative, efficient solutions that make a real impact.</p>
+            </div>
+        </section>
+        <h2>My Journey</h2>
+        <section id="myJourney">
+            <div id="top">
+                <p>I never expected coding to change my life — until a friend’s older sister recommended that I start learning HTML.</p>
+            </div>
+            <div id="left">
+                <img src="imagePlaceholder.png">
+            </div>
+            <div id="right">
+                <p>I was lost in what I wanted to do. I knew I was ambitious and capable of anything I applied myself to, but there lingered the question:
+                <br><br>
+                “What should I apply myself to?”
+                <br><br>
+                Once I started to learn front-end development, I immediately felt that passion and knew that this is what I wanted pursue.
+                </p>
+            </div>
+            <div id="bottom">
+                <p>
+                Since then, I have been relentless in my pursuit of learning and constantly hold myself to the highest standards, ensuring every project reflects both my dedication and love for the craft.</p>
             </div>
         </section>
     </main>
@@ -211,7 +161,6 @@
                 </a>
             </div>
         </div>
-    </footer> 
+    </footer>
 </body>
-<script src="script.js"></script>
 </html>
