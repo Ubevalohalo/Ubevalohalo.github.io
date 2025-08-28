@@ -105,6 +105,8 @@ nav {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
+    z-index: 1000;
+
 }
 nav ul {
     list-style-type: none;
@@ -276,4 +278,17 @@ footer #connections div img{
     footer #connections div a img {
       width: 4rem;
     }
+}
+/*This is for the fade in of elements*/
+.fade-in-up-on-scroll {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in-up-on-scroll.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.subtitle-typewriter {
+  visibility: hidden;
 }
