@@ -104,7 +104,7 @@ function setupScrollAnimation() {
   }
 }
 //--------------------------------------------------------------------------------------
-// A reusable function for a single typewriter effect on an element
+//typewriter effect
 function typeWriter(element, text, speed, callback) {
     let i = 0;
     
@@ -143,6 +143,14 @@ function startSecondTypewriterEffect() {
     typeWriter(element, originalText, 100, null);
 }
 
+
+
+
+
+
+
+
+
 // The main function that runs when the page is fully loaded
 window.onload = function() {
     createNavBar();
@@ -150,5 +158,5 @@ window.onload = function() {
     underlineCurrentPage();
     setupScrollAnimation();
     startFirstTypewriterEffect()
-    // Call the first typewriter function after a 2-second delay
+    // Call the first typewriter function after a 2 sec delay
 }
