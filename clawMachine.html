@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claw Machine</title>
+    <link rel="stylesheet" href="gameCSSframework.css">
+      <!-- Google Fonts for header and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--Google Font for specialized areas-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        #machineContainer{
+            border: 1px solid white;
+            padding: 1rem;
+            color: white;
+        }
+        #clawMachine{
+            border: 1px solid white;
+            padding: 1rem;
+        }
+        #gameHeader{
+            border: 5px solid #4A5D23;
+            padding: 1rem;
+            background-color: black;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 200%;
+            text-align: center;
+        }
+        #gameHeader h2 {
+            margin: 0rem;
+            color: white;
+            text-shadow: 5px 5px 5px #9B2340, -5px -5px 5px #9B2340, 5px -5px 5px #9B2340, -5px 5px 5px #9B2340;
+        }
+        #controlCenter{
+            border: 1px solid white;
+            padding: 1rem;
+            background-color: #CBA2F4;
+            border: 5px solid #4A5D23;
+        }
+        #toyContainer{
+            border: 1px solid white;
+            background-color: #FFD6E0;
+        }
+        #toyOutputBox{
+            border: 1px solid white;
+            padding: 1rem;
+            background-color: #4D2674;
+        }
+        #toyFloor{
+            border: 1px solid white;
+            background-color: white;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5rem ;
+        }
+        .individualToy {
+            padding: 1rem;
+            background-color: black;
+            margin: 0.1rem;
+            width: 10%;
+        }
+        #upArrow, #rightArrow {
+            border: 1px solid white;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #4D2674;
+            width: fit-content;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+
+        <section class="gaming">
+            <section class="title">
+                <h1>Prize Pop Claw Machine!</h1>
+            </section>
+            <section class="about">
+                <h2>About this Game</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                </p>
+            </section>
+            <section class="howToPlay">
+                <h2>How to Play</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                </p>
+            </section>
+
+
+             <section class="miniPlayer">
+                <div id="machineContainer">
+                    <div id="clawMachine">
+                        <div id="gameHeader"><h2>PRIZE POP</h2></div>
+                        <div id="controlCenter">
+                            <div id="toyContainer">
+                                <div id="toyFloor">
+                                    <div class="individualToy">
+                                        <p>This is a toy</p>
+                                    </div>
+                                    <div class="individualToy">
+                                        <p>This is a toy</p>
+                                    </div>
+                                    <div class="individualToy">
+                                        <p>This is a toy</p>
+                                    </div>
+                                    <div class="individualToy">
+                                        <p>This is a toy</p>
+                                    </div>
+                                    <div class="individualToy">
+                                        <p>This is a toy</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="toyOutputBox">
+
+                            </div>
+                            <div id="rightArrow">
+                                <p>-></p>
+                            </div>
+                            <div id="upArrow">
+                                <p>^</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+        <section class="caseStudy">
+            <h2>Project Breakdown</h2>
+            <h3>Project Intent</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            </p>
+            <h3>Tools & Techniques</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            </p>
+            <h3>What I Learned</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>[NAME OF GAME AND HUB] © 2026 is proudly presented to you by creators Isabella and Rachel!</p>
+        <p>Programming and Development by Isabella Pena· Art and Design by Rachel Chavez</p>
+        <a href="###">Game Hub</a>
+        <a href="###">Back to My Portfolio</a>
+        <!-- back to top button-->
+    </footer>
+</body>
+</html>
