@@ -17,38 +17,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
-      .wrapper ul {
-        display: flex;
-        justify-content: space-around;
+      .wrapper /*parent of ul*/{
+        padding: 2rem; 
+
       }
-      li {
-        list-style-type: none;
+      .cards /*overall ul*/, .individualCard /*each li*/, .view /*the front and back views*/ {
+        display: flex; /*put the two sides of the card next to each other*/
+        align-items: center;
+        justify-content: center;
       }
-      .individualCard img {
-        width: 10rem;
-      }
-      .individualCard {
-        backface-visibility: visible;
-        animation: mymove 3s infinite;
-        position: relative;
-        transform-style: preserve-3d;
-        height: 5rem;
-        width: 5rem;
-      }
-      .front, .back {
-        position: absolute;
+      .cards /*the ul*/ {
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
+        padding-left: 0rem; /*there is a weird padding that pushes it outside the container*/
+        flex-wrap: wrap; /*so that the cards don't come out of the container*/
+        justify-content: space-between; /*evenly distributes each li aka card*/
       }
-      .back {
-        transform: rotateY(180deg);
+      .cards .individualCard /*for each li*/ {
+        cursor: pointer; /*turns the cursor on hover to the little hand so that users know they can click on it*/
+        list-style-type: none;
+        user-select: none; /*this prevents the users from selecting any text in an element*/ 
+        position: relative; /*position property determines where an element will be, static is default, and in this case, it is 'relative' to where its regular position would be, ex: left:20px is 20px left of where it would usually be*/
+        perspective: 1000px; /*perspective turns the screen into a 3d space for the viewer, and the pixels determine the intensity of it*/
+        transform-style: preserve-3d; /*this puts the children elements (in this case, the seperate divs for the sides of the cards) in a 3d space as well*/
+        height: calc(100% / 4 - 10px);
+        width: calc(100% / 4 - 10px);/*these values are determined by the parent container then put into this equation*/
+     }
+     .individualCard .view /*this selects the BOTH views within each individual card, 2 sides*/ {
+      width: 100%;
+      height: 100%; /*fill parent containter*/
+      position: absolute; /*this is more precise positioning, removes from the flow of the document, relative to its parent element*/
+      /*^^^this css lays the different card views on top of each other BECAUSE 1) the class 'view'contains the entire parent elements and 2) each card is relatively poisitioned while the div inside it (with the view class) has a static, absolute positioning*/
+      pointer-events: none; /*similar to user-select:none in the sense that child elements cannot be selected*/
+      backface-visibility: hidden; /*this hides the identical mirror image of the cards when flipped, so that when we flip the card, the same image but reverse is not shown*/
+
+      /*transition: transform 0.25s linear;*/ /*COME BACK TO THIS, IT IS AN ANIMATION*/
+     }
+     /*front view css*/
+    .individualCard .front-view img{
+      width: 10rem;
+    }
+    .individualCard .back-view img{
+      max-width: 12rem;
+    }/*^^^^^ sizing both sides of the cards*/
+    .individualCard .back-view {
+      transform: rotateY(-180deg);/*i hid the visibility of the backface for the individual card front and back view, now, I am taking the backside and flipping it so that the front of the card in class back-view is now facing the back*/
+    }
+    /*this is to select the class that JavaScript will add .flip which is when the card is flipped*/
+    .individualCard.flip .back-view {/*putting the classes together WITHOUT a space means that an element has to have BOTH classes in order for these styles to be applied. In this instance, we are selecting the elements that have BOTH .individualCard and .flip, and then inside that, .back-view*/
+    /*WHY DO WE DO THIS?*/
+    transform: rotate(0);/*previously, it was -180, so this makes it face the front again to reveal the back*/
+    }
+    .individualCard.flip .front-view {
+    transform: rotate(180deg);/*previously, it was 0, so this makes it face back to be hidden and show the back face*/
+    }
+    /*this is for different screen sizes*/
+    /*tablet size*/
+    @media screen and (max-width: 700px) {
+      .cards{
+        height: 350px;
+        width: 350px;
       }
-      @keyframes mymove {
-        from {transform: rotateY(0deg);}
-        to {transform: rotateY(180deg);}
-        
+      .card .front-view img{
+        width: 17px;
       }
+      .card .back-view img{
+        max-width: 40px;
+      }
+    }
+    /*mobile screen*/
+    @media screen and (max-width: 530px) {
+      .cards{
+        height: 300px;
+        width: 300px;
+      }
+      .card .front-view img{
+        width: 15px;
+      }
+      .card .back-view img{
+        max-width: 35px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
   </head>
   <body>
@@ -71,196 +136,21 @@
                 </p>
             </section>
              <section class="miniPlayer">
-                
-              
-
-
-
-
-
-
-
-
-
-
-
+       
     <div class="wrapper">
       <ul class="cards">
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard">
-          <div class="front">
+          <div class="view front-view">
             <img src="matchingCover.png" alt="icon">
           </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
           </div>
         </li>
         <!--ONE CARD END---------------------------------------------------------------->
 
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-        <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
-
-                <!--ONE CARD---------------------------------------------------------------->
-        <li class="individualCard">
-          <div class="front">
-            <img src="matchingCover.png" alt="icon">
-          </div>
-          <div class="back">
-            <img src="matchingColor1.png" alt="card-img" class="set1" id="card1set1">
-          </div>
-        </li>
-        <!--ONE CARD END---------------------------------------------------------------->
+              
       </ul>
     </div>
 
@@ -295,27 +185,6 @@
         <a href="###">Back to My Portfolio</a>
         <!-- back to top button-->
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </body>
   <script>
    

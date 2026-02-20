@@ -15,8 +15,8 @@ body {
 }
 .gaming {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
     gap: 1rem;
 }
 .title, .about, .howToPlay, .caseStudy, footer {
@@ -28,7 +28,9 @@ body {
     text-align: center;
     font-size: x-large;
     margin: auto 0.5rem ;
-
+}
+.title h1 {
+    margin: 0rem;
 }
 h1, h2, h3, h4 {
     color: #9B2340;
