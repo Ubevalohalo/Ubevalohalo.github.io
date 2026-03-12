@@ -48,7 +48,7 @@
       height: 100%; /*fill parent containter*/
       position: absolute; /*this is more precise positioning, removes from the flow of the document, relative to its parent element*/
       /*^^^this css lays the different card views on top of each other BECAUSE 1) the class 'view'contains the entire parent elements and 2) each card is relatively poisitioned while the div inside it (with the view class) has a static, absolute positioning*/
-      pointer-events: none; /*similar to user-select:none in the sense that child elements cannot be selected*/
+
       backface-visibility: hidden; /*this hides the identical mirror image of the cards when flipped, so that when we flip the card, the same image but reverse is not shown*/
 
       /*transition: transform 0.25s linear;*/ /*COME BACK TO THIS, IT IS AN ANIMATION*/
@@ -131,6 +131,8 @@
           </div>
         </li>
         <!--ONE CARD END---------------------------------------------------------------->
+
+        
       </ul>
     </div>
             </section>
@@ -160,18 +162,34 @@
     /*
       Different JS functions I will need:
         1. function flipCard
-          this function will monitor for a click event on each li with class individualCard
+          a) this function will monitor for a click event on each li with class individualCard
+          b) onclick, the card will go from front face to back face, but upon click again it will not be affected until another card is clicked
+
         2. function matchPair
-          this function will need to verify that the two cards match. maybe they will need to have the same class? so that i can then verify if they are both in the same class, then it will = a match
-          if statement
-          if NOT then it needs to flip both cards back to their original state and activate a count for the amount of mismatched attempted
+          a) this function will need to verify that the two cards match. maybe they will need to have the same class? so that i can then verify if they are both in the same class, then it will == a match
+          b) if statement; if NOT then it needs to flip both cards back to their original state and activate a count for the amount of mismatched attempted
+
         3. function incorrectAttempts
-          with the tally amount from the matchPair function, when it hits a certain amount, there will be a game over screen
+          a) with the tally amount from the matchPair function, when it hits a certain amount, there will be a game over screen
+          b) there should also be an area that allows the user to refresh and restart the game within the mini player, without refreshing the page 
         4. function livesTally
           there should be a section at the bottom or the side that shows how many incorrect attempts were made and how many are left before the game is over
-    
     */
 
+   //I need to monitor the click event on EVERY element with class, so i first need to iterate through each using an array
+   const individualCard = document.querySelectorAll('.individualCard');
+   
+
+  function flipCard() {
+    
+    console.log ('step 2: flipCard function works')
+  }
+  //filter through each individualCards
+  for ( let i = 0; i < individualCard.length; i++){
+    //each card monitors for a click event that then triggers the flipCard function
+    individualCard[i].addEventListener('click', flipCard)
+    console.log('step 1: for loop triggered')
+    };
 
   </script>
   
