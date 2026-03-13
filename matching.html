@@ -33,32 +33,30 @@
         flex-wrap: wrap; /*so that the cards don't come out of the container*/
         justify-content: space-between; /*evenly distributes each li aka card*/
       }
-      .cards .individualCard /*for each li*/ {
-        cursor: pointer; /*turns the cursor on hover to the little hand so that users know they can click on it*/
+      .cards .individualCard {
+        cursor: pointer;
         list-style-type: none;
-        user-select: none; /*this prevents the users from selecting any text in an element*/ 
-        position: relative; /*position property determines where an element will be, static is default, and in this case, it is 'relative' to where its regular position would be, ex: left:20px is 20px left of where it would usually be*/
-        perspective: 1000px; /*perspective turns the screen into a 3d space for the viewer, and the pixels determine the intensity of it*/
-        transform-style: preserve-3d; /*this puts the children elements (in this case, the seperate divs for the sides of the cards) in a 3d space as well*/
-        height: calc(100% / 4 - 10px);
-        width: calc(100% / 4 - 10px);/*these values are determined by the parent container then put into this equation*/
-     }
-     .individualCard .view /*this selects the BOTH views within each individual card, 2 sides*/ {
-      width: 100%;
-      height: 100%; /*fill parent containter*/
-      position: absolute; /*this is more precise positioning, removes from the flow of the document, relative to its parent element*/
-      /*^^^this css lays the different card views on top of each other BECAUSE 1) the class 'view'contains the entire parent elements and 2) each card is relatively poisitioned while the div inside it (with the view class) has a static, absolute positioning*/
-
-      backface-visibility: hidden; /*this hides the identical mirror image of the cards when flipped, so that when we flip the card, the same image but reverse is not shown*/
-
-      /*transition: transform 0.25s linear;*/ /*COME BACK TO THIS, IT IS AN ANIMATION*/
-     }
+        user-select: none;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        height: 20%;
+        width: 20%;
+        margin: 2%;
+      }
+     .individualCard .view {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin: auto;
+        backface-visibility: hidden;
+      }
      /*front view css*/
     .individualCard .front-view img{
-      width: 10rem;
+      width: 100%;
     }
     .individualCard .back-view img{
-      max-width: 12rem;
+      width: 100%;
     }/*^^^^^ sizing both sides of the cards*/
     .individualCard .back-view {
       transform: rotateY(-180deg);/*i hid the visibility of the backface for the individual card front and back view, now, I am taking the backside and flipping it so that the front of the card in class back-view is now facing the back*/
@@ -131,7 +129,156 @@
           </div>
         </li>
         <!--ONE CARD END---------------------------------------------------------------->
-
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+         <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+         <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
+        <!--ONE CARD---------------------------------------------------------------->
+        <li class="individualCard">
+          <div class="view front-view">
+            <img src="matchingCover.png" alt="icon">
+          </div>
+          <div class="view back-view">
+            <img src="matchingStrawberry.png" alt="card-img">
+          </div>
+        </li>
+        <!--ONE CARD END---------------------------------------------------------------->
         
       </ul>
     </div>
@@ -181,8 +328,11 @@
    
 
   function flipCard() {
-    
+    const card = this;
+    card.style.transform = 'rotateY(180deg)';
+    card.style.transition = 'transform 0.5s ease';
     console.log ('step 2: flipCard function works')
+    return
   }
   //filter through each individualCards
   for ( let i = 0; i < individualCard.length; i++){
