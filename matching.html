@@ -285,14 +285,35 @@
 
    //I need to monitor the click event on EVERY element with class, so i first need to iterate through each using an array
    const individualCard = document.querySelectorAll('.individualCard');
-   
+   const cardFlipLimit = 2;
+   let cardFlipCount = 0; 
+   let wrongAttempts = 0;
+   let wrongAttemptsLimit = 5;
+
+  function wrongCounter () {
+    if (wrongAttempts < wrongAttemptsLimit){
+      console.log ('wrong counter fired')
+      wrongAttempts +=1;
+      console.log ('wrong attempts: ' + wrongAttempts)
+    } else {
+      console.log('game over')
+    }
+    
+  };
 
   function flipCard() {
-    const card = this;
-    card.style.transform = 'rotateY(180deg)';
-    card.style.transition = 'transform 0.5s ease';
-    console.log ('step 2: flipCard function works')
-    return
+    if (cardFlipCount < cardFlipLimit) {
+      const card = this;
+      card.style.transform = 'rotateY(180deg)';
+      card.style.transition = 'transform 0.5s ease';
+      console.log ('step 2: flipCard function works');
+      cardFlipCount += 1; 
+      console.log (cardFlipCount);
+      return;
+    } else {
+      wrongCounter();
+    }
+    
   }
   //filter through each individualCards
   for ( let i = 0; i < individualCard.length; i++){
