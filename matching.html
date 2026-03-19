@@ -122,7 +122,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard strawberry">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="strawberry" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingStrawberry.png" alt="card-img">
@@ -132,7 +132,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard strawberry">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="strawberry" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingStrawberry.png" alt="card-img">
@@ -142,7 +142,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard blueberry">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="blueberry" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingBlueberry.png" alt="card-img">
@@ -152,7 +152,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard blueberry">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="blueberry" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingBlueberry.png" alt="card-img">
@@ -162,7 +162,7 @@
          <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard kiwi">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="kiwi" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingKiwi.png" alt="card-img">
@@ -172,7 +172,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard kiwi">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="kiwi" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingKiwi.png" alt="card-img">
@@ -182,7 +182,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard peach">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="peach" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingPeach.png" alt="card-img">
@@ -192,7 +192,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard peach">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="peach" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingPeach.png" alt="card-img">
@@ -202,7 +202,7 @@
          <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard pineapple">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="pineapple" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingPineapple.png" alt="card-img">
@@ -212,7 +212,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard pineapple">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="pineapple" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingPineapple.png" alt="card-img">
@@ -222,7 +222,7 @@
         <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard starFruit">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="starFruit" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingStarFruit.png" alt="card-img">
@@ -232,7 +232,7 @@
        <!--ONE CARD---------------------------------------------------------------->
         <li class="individualCard starFruit">
           <div class="view front-view">
-            <img src="matchingCover.png" alt="icon">
+            <img src="matchingCover.png" class="starFruit" alt="icon">
           </div>
           <div class="view back-view">
             <img src="matchingStarFruit.png" alt="card-img">
@@ -285,12 +285,24 @@
 
    //I need to monitor the click event on EVERY element with class, so i first need to iterate through each using an array
    const individualCard = document.querySelectorAll('.individualCard');
-   const cardFlipLimit = 2;
-   let cardFlipCount = 0; 
-   let wrongAttempts = 0;
-   let wrongAttemptsLimit = 5;
+   
+  let cardFlipCount = 0; 
+  let cardFlipLimit = 1;
 
-  function wrongCounter () {
+  let wrongAttempts = 0;
+  let wrongAttemptsLimit = 4;
+
+  let correctAttempts = 0;
+  let correctAttemptsMax = 6;
+
+  let clickOneClass = 0; 
+  let clickTwoClass = 0;
+  let cardsMatch = false;
+
+  //----------------------------------------------------------------------
+
+
+  function wrongCounter () {//this is called if the cards selected do not match
     if (wrongAttempts < wrongAttemptsLimit){
       console.log ('wrong counter fired')
       wrongAttempts +=1;
@@ -301,26 +313,79 @@
     
   };
 
-  function flipCard() {
-    if (cardFlipCount < cardFlipLimit) {
+  function evaluateCards(){
+    if (clickOneClass === clickTwoClass){
+       console.log('this is correct!')
+        } else {
+          console.log('this is incorrect:( )')
+        }
+  };
+
+
+
+
+
+  function flipCard() {//this is called once a click event is observed on a card
+    if (cardFlipCount < cardFlipLimit) {//if the amount of cards selected are less than 2 (a pair) then this will be called
+      //this flips the cards selected
       const card = this;
       card.style.transform = 'rotateY(180deg)';
       card.style.transition = 'transform 0.5s ease';
       console.log ('step 2: flipCard function works');
       cardFlipCount += 1; 
-      console.log (cardFlipCount);
-      return;
+      let clicked = event.target;
+      let clickOneClass = clicked.className;
+      console.log("class name of first card is " + clickOneClass);
+      console.log ("amount of cards flipped: " + cardFlipCount);
+    } else if (cardFlipCount == cardFlipLimit) {
+      console.log('else if triggered')
+      const card = this;
+      card.style.transform = 'rotateY(180deg)';
+      card.style.transition = 'transform 0.5s ease';
+      console.log ('step 2: flipCard function works');
+      cardFlipCount += 1; 
+      let clicked = event.target;
+      let clickTwoClass = clicked.className;
+      console.log("class name of second card is " + clickTwoClass);
+      console.log ("amount of cards flipped: " + cardFlipCount);
+      evaluateCards();
     } else {
-      wrongCounter();
+      console.log ('else triggered')
+      //here i need to evaluate if they have the same name
+      
     }
+  };
+//-------------------------------------------
+      
     
-  }
+   // } else { //this gets routed to if more than two cards are selected
+      //this part of the function needs to reset the cards
+      //wrongCounter();
+    
   //filter through each individualCards
   for ( let i = 0; i < individualCard.length; i++){
     //each card monitors for a click event that then triggers the flipCard function
     individualCard[i].addEventListener('click', flipCard)
     console.log('step 1: for loop triggered')
     };
+
+
+     
+
+
+//function for correct answers
+
+
+
+
+
+
+
+
+
+
+
+
 
   </script>
   
