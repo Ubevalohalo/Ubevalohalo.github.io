@@ -301,30 +301,7 @@
 
   //----------------------------------------------------------------------
 
-
-  function wrongCounter () {//this is called if the cards selected do not match
-    if (wrongAttempts < wrongAttemptsLimit){
-      console.log ('wrong counter fired')
-      wrongAttempts +=1;
-      console.log ('wrong attempts: ' + wrongAttempts)
-    } else {
-      console.log('game over')
-    }
-    
-  };
-
-  function evaluateCards(){
-    if (clickOneClass === clickTwoClass){
-       console.log('this is correct!')
-        } else {
-          console.log('this is incorrect:( )')
-        }
-  };
-
-
-
-
-
+//----------------------------------------------------------------------------------------
   function flipCard() {//this is called once a click event is observed on a card
     if (cardFlipCount < cardFlipLimit) {//if the amount of cards selected are less than 2 (a pair) then this will be called
       //this flips the cards selected
@@ -332,36 +309,44 @@
       card.style.transform = 'rotateY(180deg)';
       card.style.transition = 'transform 0.5s ease';
       console.log ('step 2: flipCard function works');
+      //this adds so that the program knows how many cards the user has selected aka has flipped
       cardFlipCount += 1; 
+      //this is so that we can get the class name of the card selected so that we can check if the cards match
       let clicked = event.target;
       let clickOneClass = clicked.className;
       console.log("class name of first card is " + clickOneClass);
       console.log ("amount of cards flipped: " + cardFlipCount);
-    } else if (cardFlipCount == cardFlipLimit) {
+
+    //if the amount of cards selected is equal to 2
+    } else /*if (cardFlipCount == cardFlipLimit)*/ {
       console.log('else if triggered')
       const card = this;
+      //flip the card
       card.style.transform = 'rotateY(180deg)';
       card.style.transition = 'transform 0.5s ease';
       console.log ('step 2: flipCard function works');
+      //add to count for how many cards are flipped
       cardFlipCount += 1; 
+      //get the class name of the second card clicked
       let clicked = event.target;
       let clickTwoClass = clicked.className;
       console.log("class name of second card is " + clickTwoClass);
       console.log ("amount of cards flipped: " + cardFlipCount);
-      evaluateCards();
-    } else {
-      console.log ('else triggered')
-      //here i need to evaluate if they have the same name
-      
+
+
+      //after two cards are clicked and selected, evaluate if they match
+      if (clickOneClass == clickTwoClass){
+       console.log('this is correct!')
+       console.log("class name of first card is " + clickOneClass);
+       console.log("class name of second card is " + clickTwoClass);
+        } else {
+          console.log('this is wrong')
+          console.log("class name of first card is " + clickOneClass);
+          console.log("class name of second card is " + clickTwoClass);
+        }
     }
   };
-//-------------------------------------------
-      
-    
-   // } else { //this gets routed to if more than two cards are selected
-      //this part of the function needs to reset the cards
-      //wrongCounter();
-    
+//----------------------------------------------------------------------------------------
   //filter through each individualCards
   for ( let i = 0; i < individualCard.length; i++){
     //each card monitors for a click event that then triggers the flipCard function
