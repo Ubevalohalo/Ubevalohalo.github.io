@@ -71,30 +71,42 @@
     }
     /*this is for different screen sizes*/
     /*tablet size*/
-    @media screen and (max-width: 700px) {
-      .cards{
-        height: 350px;
-        width: 350px;
-      }
-      .card .front-view img{
-        width: 17px;
-      }
-      .card .back-view img{
-        max-width: 40px;
-      }
-    }
-    /*mobile screen*/
     @media screen and (max-width: 530px) {
-      .cards{
-        height: 300px;
-        width: 300px;
+
+      /* 🔥 center the whole game area */
+      .miniPlayer {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem;
       }
-      .card .front-view img{
-        width: 15px;
+
+      /* 🔥 stop wrapper from pushing things inward */
+      .wrapper {
+        padding: 0;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
       }
-      .card .back-view img{
-        max-width: 35px;
+
+      /* 🔥 SWITCH from flex → grid ONLY on mobile */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+
+        width: 100%;
+        height: auto; /* 🔥 removes forced square box */
       }
+
+      /* 🔥 override the broken % sizing */
+      .cards .individualCard {
+        width: 100%;
+        height: auto;
+        margin: 0; /* 🔥 removes huge vertical gaps */
+        aspect-ratio: 1 / 1;
+      }
+
     }
     </style>
   </head>
@@ -340,7 +352,6 @@
       clickOneClass = event.target.className; // store globally
       //console.log("class name of first card is " + clickOneClass);
       //console.log ("amount of cards flipped: " + cardFlipCount);
-
     //if the amount of cards selected is equal to 2
     } else /*if (cardFlipCount == cardFlipLimit)*/ {
       //console.log('else if triggered')
@@ -357,40 +368,28 @@
       //console.log("class name of second card is " + clickTwoClass);
       //console.log ("amount of cards flipped: " + cardFlipCount);
       lockCards = true;
-
-
       //after two cards are clicked and selected, evaluate if they match
       if (clickOneClass == clickTwoClass){
         //console.log("class name of first card is " + clickOneClass);
         //console.log("class name of second card is " + clickTwoClass);
         console.log('this is correct!')
-       
         } else {
           //console.log("class name of first card is " + clickOneClass);
           //console.log("class name of second card is " + clickTwoClass);
           console.log('this is wrong');
           setTimeout(function(){
             resetCardsFunction();
-
-
           }, 800);
-          
-          
-          
         }
     }
   };
-//----------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
   //filter through each individualCards
   for ( let i = 0; i < individualCard.length; i++){
     //each card monitors for a click event that then triggers the flipCard function
     individualCard[i].addEventListener('click', flipCard)
     console.log('step 1: for loop triggered')
     };
-
-
-     
-
 
 //function for correct answers
 
