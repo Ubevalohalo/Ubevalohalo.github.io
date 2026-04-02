@@ -331,8 +331,8 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
     cardFlipCount = 0;
     } else {
       correctAttempts++;
-      console.log('correct attempts: ' + correctAttempts)
-      console.log('you win!')
+      document.getElementById('userMessages').innerHTML = "<h3>You Win! Congradulations! Play Again? </h3>"
+
     };
   };
 //-------------------------------------------------------------------------------------
