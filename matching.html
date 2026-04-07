@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/c3295fe299.js" crossorigin="anonymous"></script>
     <style>
       .wrapper /*parent of ul*/{
         padding: 0 15%; 
@@ -74,6 +74,11 @@
         text-align: center;
         margin: 0rem auto;
       }
+      #refreshButton {
+        background-color: #FFD6E0;
+        font-size: 100%;
+        color: #9B2340;
+      }
     /*this is for different screen sizes*/
     /*tablet size*/
     @media screen and (max-width: 530px) {
@@ -103,6 +108,7 @@
         margin: 0;
         aspect-ratio: 1 / 1;
       }
+     
     }
     </style>
   </head>
@@ -296,6 +302,42 @@
   let resetCards = false;
   let revealedCards = [];
   let mismatchCardPair = [];
+
+  const cardsArray = document.getElementsByClassName("individualCard");
+
+
+
+//refresh game, set to initial values, not a good way to reset things in js unless use state object, make button
+    function refreshGame (){
+        cardFlipCount = 0; 
+        cardFlipLimit = 1;
+
+        wrongAttempts = 0;
+        wrongAttemptsLimit = 3;
+        wrongAttemptsRemaining = 4;
+
+        correctAttempts = 0;
+        correctAttemptsMax = 5;
+
+        clickOneClass = null; 
+        clickTwoClass = null;
+        cardsMatch = false;
+
+        lockCards = false;
+        resetCards = false;
+        mismatchCardPair = [];
+
+        for (let i = 0; i < revealedCards.length; i++){
+          individualCard[i].style.transform = 'rotateY(0deg)';
+          individualCard[i].style.transition = 'transform 0.5s ease';
+        }
+        revealedCards = [];
+        document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
+    };
+
+
+
+
   //----------------------------------------------------------------------
 document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remaining: 4 </h3>"
 //for correct answers
@@ -311,12 +353,14 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
     cardFlipCount = 0;
     } else {
       correctAttempts++;
-      document.getElementById('userMessages').innerHTML = "<h3>You Win! Congradulations! Play Again? </h3>"
+      document.getElementById('userMessages').innerHTML = "<h3>You Win! Congradulations! Play Again? <button id=\"refreshButton\"><i class=\"fa-solid fa-rotate-right\" id=\"refreshButton\"></i></button> </h3>"
+      document.getElementById("refreshButton").addEventListener("click",refreshGame)
     };
   };
 //-------------------------------------------------------------------------------------
 //for wrong answers
   function wrongResetCardsFunction (){
+    debugger;
     if (wrongAttempts < wrongAttemptsLimit){
     for ( let i = 0; i < revealedCards.length; i++){
       
@@ -324,6 +368,8 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
     revealedCards[i].style.transform = 'rotateY(0deg)';
     revealedCards[i].style.transition = 'transform 0.5s ease';
     };
+
+
     wrongAttempts++;
     wrongAttemptsRemaining--;
     //console.log('wrong attempts: ' + wrongAttempts)
@@ -334,9 +380,17 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
     clickTwoClass = null;
     cardFlipCount = 0;
     } else {
-      document.getElementById('userMessages').innerHTML = "<h3>Game Over! Refresh to Try Again </h3>"
-    };//somewhere in here I need to make it so that it only the incorrect pairs are flipped
+      //reveal all cards
+      for ( let i = 0; i < individualCard.length; i++){
+        individualCard[i].style.transform = 'rotateY(180deg)';
+        individualCard[i].style.transition = 'transform 0.5s ease';
+        };
+      document.getElementById('userMessages').innerHTML = "<h3>Game Over! Refresh to Try Again <button id=\"refreshButton\"><i class=\"fa-solid fa-rotate-right\" ></i></button> </h3>"
+      document.getElementById("refreshButton").addEventListener("click",refreshGame)
+    };
   };
+
+
 //----------------------------------------------------------------------------------
   function flipCard(event) {//this is called once a click event is observed on a card
     if (lockCards) return; //if the amount of cards is too much (2), then we don't want to run the function. this is asking if lockCards is true. starts off as false, so it can pass through. the else statement runs and turns the value to true, which then enables this line.
@@ -383,5 +437,25 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
     individualCard[i].addEventListener('click', flipCard)
     console.log('step 1: for loop triggered')
     };
+
+    function shuffleCards() {
+      const cardsContainer = document.querySelector('.cards');
+      const cards = Array.from(cardsContainer.children);
+      // Fisher-Yates shuffle
+      for (let i = cards.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      // Re-append shuffled cards to DOM
+      cards.forEach(card => cardsContainer.appendChild(card));
+    }
+
+
+
+
+
+  window.addEventListener("load", () => {
+  shuffleCards();
+});
   </script>
 </html>
