@@ -300,14 +300,19 @@
 
   let lockCards = false;
   let resetCards = false;
-  let revealedCards = [];
   let mismatchCardPair = [];
-
+  let revealedCards = [];
   const cardsArray = document.getElementsByClassName("individualCard");
 
+
+  // let revealedCards = new Set();
+
+  /*data structure: set - what is contained but not in a specific order; discrete mathmatics
+    instead of array - add things to revealed cards
+*/
 //refresh game, set to initial values, not a good way to reset things in js unless use state object, make button
     function refreshGame (){
-
+        debugger;
         cardFlipCount = 0; 
         cardFlipLimit = 1;
 
@@ -324,23 +329,28 @@
 
         lockCards = false;
         resetCards = false;
-        mismatchCardPair = [];
+        // mismatchCardPair = [];
 
-        for (let i = 0; i < revealedCards.length; i++){
+
+        //set of revealed cards- 
+
+        for (let i = 0; i < individualCard.length; i++){
           individualCard[i].style.transform = 'rotateY(0deg)';
           individualCard[i].style.transition = 'transform 0.5s ease';
         }
+        console.log(individualCard);
         revealedCards = [];
-        document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
+        document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
     };
 
 
 
 
   //----------------------------------------------------------------------
-document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remaining: 4 </h3>"
+document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: 4 </h3>"
 //for correct answers
   function correctResetCardsFunction (){
+    debugger;
     if (correctAttempts < correctAttemptsMax){
     for ( let i = 0; i < revealedCards.length; i++){
     };
@@ -360,20 +370,26 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
 //for wrong answers
   function wrongResetCardsFunction (){
     debugger;
-    if (wrongAttempts < wrongAttemptsLimit){
-    for ( let i = 0; i < revealedCards.length; i++){
-      
-    //each card monitors for a click event that then triggers the flipCard function
-    revealedCards[i].style.transform = 'rotateY(0deg)';
-    revealedCards[i].style.transition = 'transform 0.5s ease';
-    };
+    if (wrongAttempts < wrongAttemptsLimit){//still have attempts left
+
+      revealedCards[revealedCards.length-1].style.transform = 'rotateY(0deg)'
+      revealedCards[revealedCards.length-1].style.transition = 'transform 0.5s ease';
+      //when i is in a for loop it is just a variable!!! i is usual because 'index'
+      //js - other programming languages you can do this same thing and index -1 but others let you get last with negative number such as -1, -2
+      revealedCards[revealedCards.length-2].style.transform = 'rotateY(0deg)'
+      revealedCards[revealedCards.length-2].style.transition = 'transform 0.5s ease';
+
+      revealedCards.pop();
+      revealedCards.pop();//remove the last item of the array, they are methods!!! large scale = .clear (empties) and .slice (starting and ending index, array between the two, new array is made), then .splice (similar to slice, but then edits the original array) STUDY UP ON HOW TO MANIPULATE ARRAYS!!
+      //Set uses add instead of push, sets check to see if you have a value already and disregard others equal to it, for unique things
+      //arrays- more powerful with 4 methods (check and make operations on arrays): .forEach, .map(per object of array), .filter(returns another array but what you pass in to it is another function, sees if that element should be in the new array), .includes (takes a function that determines if a single element is what you are looking for OR find directly what you want)
 
 
     wrongAttempts++;
     wrongAttemptsRemaining--;
     //console.log('wrong attempts: ' + wrongAttempts)
     //console.log('wrong attempts remaining: ' + wrongAttemptsRemaining)
-    document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
+    document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
     lockCards = false;
     clickOneClass = null; 
     clickTwoClass = null;
@@ -392,6 +408,7 @@ document.getElementById('userMessages').innerHTML = "<h3>Wrong Attempts Remainin
 
 //----------------------------------------------------------------------------------
   function flipCard(event) {//this is called once a click event is observed on a card
+    debugger;
     if (lockCards) return; //if the amount of cards is too much (2), then we don't want to run the function. this is asking if lockCards is true. starts off as false, so it can pass through. the else statement runs and turns the value to true, which then enables this line.
     if (resetCards) wrongResetCardsFunction();
     if (cardFlipCount < cardFlipLimit) {//if the amount of cards selected are less than 2 (a pair) then this will be called
