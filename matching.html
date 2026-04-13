@@ -79,15 +79,37 @@
         font-size: 100%;
         color: #9B2340;
       }
+      footer a {
+        text-decoration: none;
+        background-color: black;
+        color: #FFD6E0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        display: inline-block;
+        transition: transform 0.5s ease;
+        margin-right: 2rem;
+      }
+      footer a:hover {
+        background-color: #F35A9C;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: solid 2px black;
+        transform: translateY(-10px);
+      }
     /*this is for different screen sizes*/
     /*tablet size*/
     @media screen and (max-width: 530px) {
       .miniPlayer {
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 1rem;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.5rem;
       }
+      #userMessages {
+    width: 100%;
+  }
       .wrapper {
         padding: 0;
         width: 100%;
@@ -108,6 +130,14 @@
         margin: 0;
         aspect-ratio: 1 / 1;
       }
+       #userMessages h3 {
+        font-size: 0.9rem; 
+        margin: 0 0 0.5rem 0;
+        text-align: center;
+        background-color: #9B2340;
+        padding: 0.4rem;
+        border-radius: 0.5rem;
+      }
      
     }
     </style>
@@ -116,18 +146,18 @@
         <main>
         <section class="gaming">
             <section class="title">
-                <h1>Matching Game</h1>
+                <h1>Heart & Harvest Matching Game</h1>
             </section>
             <section class="about">
                 <h2>About this Game</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Welcome to Heart & Harvest Matching Game, my very first game! <br><br>Each card has a lovely array of hearts as the front face, and you will find that each card, when clicked, reveals adorable pairs of fruits with a consistent heart theme. <br><br> I hope you enjoy playing my game as much as I enjoyed developing it! Good luck!
                 </p>
             </section>
             <section class="howToPlay">
                 <h2>How to Play</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                  Select a card, any card! <br><br>Match the fruit of the card with another but beware - if the two fruits selected do not match, you will lose an attempt and inch closer to losing! Match all cards correctly and you will win, if not, game over! <br><br>Start by selecting a card.
                 </p>
             </section>
           <section class="miniPlayer">
@@ -262,22 +292,20 @@
         </section>
         <section class="caseStudy">
             <h2>Project Breakdown</h2>
-            <h3>Project Intent</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            </p>
-            <h3>Tools & Techniques</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            </p>
-            <h3>What I Learned</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            <h3>Project Intent and Takeaways</h3>
+            <p>Being my first ever game developed, the main goal within this project was to better familiarize myself with front-end concepts in JavaScript. These main concepts mainly target base level studies, such as arrays, for loops, if else statements, and that in which is encapsulatyed in manipulating them. I also used this project as an opportunity to better my skills in debugging and understanding scope for variables. While not fully immersive within these topics, it has been a great opportunity to be introduced to these fundamental and foundational ideas that will open many doors for learning and understanding in the future.
+              <br><br>
+              Tools and languages used include Github, VS Code, HTML5, CSS, and JavaScript.
             </p>
         </section>
     </main>
     <footer>
-        <p>[NAME OF GAME AND HUB] © 2026 is proudly presented to you by creators Isabella and Rachel!</p>
-        <p>Programming and Development by Isabella Pena· Art and Design by Rachel Chavez</p>
-        <a href="###">Game Hub</a>
-        <a href="###">Back to My Portfolio</a>
+        <a href="###">Game Hub (Not yet valid)</a>
+        <a href="projects.html">Back to My Portfolio</a>
+        <p>Heart & Harvest Matching Game© 2026 is proudly presented to you by Isabella Pena as a part of [GAME HUB NAME]!</p>
+        <sub>Programming and Development by Isabella Pena · Art by Luna Sims · Thank you to my mentor, Raith, for the coninuous love and support throughout my learning and for all the times he spends answering my silly questions. Your patience and wisdom mean the world to me. </sub>
+        <br>
+
         <!-- back to top button-->
     </footer>
   </body>
@@ -288,8 +316,8 @@
   let cardFlipLimit = 1;
 
   let wrongAttempts = 0;
-  let wrongAttemptsLimit = 3;
-  let wrongAttemptsRemaining = 4;
+  let wrongAttemptsLimit = 5;
+  let wrongAttemptsRemaining = 6;
 
   let correctAttempts = 0;
   let correctAttemptsMax = 5;
@@ -317,8 +345,8 @@
         cardFlipLimit = 1;
 
         wrongAttempts = 0;
-        wrongAttemptsLimit = 3;
-        wrongAttemptsRemaining = 4;
+        wrongAttemptsLimit = 5;
+        wrongAttemptsRemaining = 6;
 
         correctAttempts = 0;
         correctAttemptsMax = 5;
@@ -347,7 +375,7 @@
 
 
   //----------------------------------------------------------------------
-document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: 4 </h3>"
+document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: 6 </h3>"
 //for correct answers
   function correctResetCardsFunction (){
     debugger;

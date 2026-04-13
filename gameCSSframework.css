@@ -57,6 +57,9 @@ section {
     grid-column: 1/5;
     grid-row: 2/5;
 }
+footer {
+    padding: 1rem;
+}
 /*for mobile phones*/
 @media (max-width: 425px) {
   .gaming {
