@@ -19,6 +19,9 @@
     <style>
       .wrapper /*parent of ul*/{
         padding: 0 15%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .cards /*overall ul*/, .individualCard /*each li*/, .view /*the front and back views*/ {
         display: flex; /*put the two sides of the card next to each other*/
@@ -26,8 +29,8 @@
         justify-content: center;
       }
       .cards /*the ul*/ {
-        width: 100%;
-        height: 100%;
+        width: 85%;
+        height: 85%;
         padding-left: 0rem; /*there is a weird padding that pushes it outside the container*/
         flex-wrap: wrap; /*so that the cards don't come out of the container*/
         justify-content: space-between; /*evenly distributes each li aka card*/
@@ -120,7 +123,6 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
-
         width: 100%;
         height: auto; 
       }
@@ -300,10 +302,10 @@
         </section>
     </main>
     <footer>
-        <a href="###">Game Hub (Not yet valid)</a>
+        <a href="../Pink Pixel Arcade/arcadeHub.html">Game Hub</a>
         <a href="../../portfolioPages/projects.html">Back to My Portfolio</a>
         <p>Heart & Harvest Matching Game© 2026 is proudly presented to you by Isabella Pena as a part of [GAME HUB NAME]!</p>
-        <sub>Programming and Development by Isabella Pena · Art by Luna Sims · Thank you to my mentor, Raith, for the coninuous love and support throughout my learning and for all the times he spends answering my silly questions. Your patience and wisdom mean the world to me. </sub>
+        <sub>Programming and Development by Isabella Pena · Art by Luna Sims · Thank you to my mentor, Raith, for the continuous love and support throughout my learning and for all the time spent answering my silly questions. </sub>
         <br>
 
         <!-- back to top button-->
@@ -369,6 +371,16 @@
         console.log(individualCard);
         revealedCards = [];
         document.getElementById('userMessages').innerHTML = "<h3>Attempts Remaining: " + wrongAttemptsRemaining + " </h3>"
+        //shuffle the cards
+        const cardsContainer = document.querySelector('.cards');
+        const cards = Array.from(cardsContainer.children);
+        // Fisher-Yates shuffle
+        for (let i = cards.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        // Re-append shuffled cards to DOM
+        cards.forEach(card => cardsContainer.appendChild(card));
     };
 
 
