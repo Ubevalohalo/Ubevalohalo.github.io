@@ -74,14 +74,9 @@
     justify-items: center; /* Centers items within their grid cells */
 }
 .projectCard {
-    /*
-      The cards themselves no longer need flex properties like flex-grow.
-      The grid container handles the sizing and placement.
-    */
     background-color: #FFE9F9;
     border: 2px solid #FFE9F9;
     transition: transform 0.5s ease;
-    text-align: center; /* Centers the content inside each card */
     width: 100%; /* Ensures the card takes up the full width of its grid cell */
 }
 .projectCard img {
@@ -90,13 +85,17 @@
 }
 .projectCard h4 {
     background-color: black;
-    width: 94%;
+    font-weight: 300;
     color: #FFE9F9;
     margin: 3% auto;
     text-align: center;
     padding: 3% 0%;
-    font-weight: bold;
-    font-size: 150%;
+    font-size: 200%;
+}
+.projectCard p {
+    text-align: left;
+    padding: 0.25rem 1rem;
+    color: black;
 }
 .projectCard:hover {
     transform: scale(1.05);
@@ -138,29 +137,31 @@
         </section>
         <section id="myWork" class="fade-in-up-on-scroll">
             <h1>My Work</h1>
-            <p>Great things coming soon! Please check back later for updates made to this page. Once I complete a project, I will upload it here! Thank you so much for your patience :)</p>
+            <!--<p>Great things coming soon! Please check back later for updates made to this page. Once I complete a project, I will upload it here! Thank you so much for your patience :)</p>
             <img src="underConstruction.png" style="width: 30%; margin-bottom: 5rem;">
             <a href="dressUpGame.html" style="color: white;">Link to Dress up game in progress!!</a>
             <br>
-            <a href="matching.html" style="color: white;">Link to Matching game in progress!!</a>
-            <!--
-            <h1>My Work</h1>
+            <a href="matching.html" style="color: white;">Link to Matching game in progress!!</a>-->
+            
             <div id="projects">
-                
-                
                 <div class="projectCard">
                     <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
+                    <h4>Lumen Ledger</h4>
+                    <p>Where financial clarity becomes direction</p>
                     </a>
                 </div>
                 <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
+                    <a href="***"><img src="imagePlaceholder.png">
+                    <h4>Pink Pixel Arcade</h4>
+                    <p>A cozy space for small games</p>
                     </a>
                 </div>
+                
+                <!--
                 <div class="projectCard">
                     <a href="projectTemplate.html"><img src="imagePlaceholder.png">
                     <h4>Example Placeholder</h4>
+                    <sub>Subtitle</sub>
                     </a>
                 </div>
                 <div class="projectCard">
