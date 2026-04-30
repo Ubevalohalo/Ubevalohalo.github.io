@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project: Book</title>
+</head>
+<body>
+    <main id="textArea">
+        <!--this is where the object information for each book will be displayed)-->
+    </main>
+</body>
+<script>
+//create the object constructor, it's just a function
+    function book(title, author, numberOfPages, readYN){
+        //debugger;
+    //protects if the 'new' keyword is not used
+        if (!new.target) {
+            throw Error("You must use the 'new' operator to call the constructor");
+        }
+    //otherwise...
+    //these are the different values i am storing in my object
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.readYN = readYN;
+
+        this.info = (readYN + title + " written by " + author + ", which has " + numberOfPages + " pages.")
+    //now the function that displays all of the book's information
+        this.bookInfo = function(){
+            console.log(info);
+        };
+    };
+    const prideAndPrejudice = new book("Pride and Prejudice", "Jane Austin", "450", "I have not read ");
+     const redFishBlueFish = new book("Red Fish Blue Fish", "Dr. Seuss", "20", "I have read ")
+    console.log(prideAndPrejudice.info);
+    console.log(redFishBlueFish.info);
+//this portion will print whatever objects aka books I have stored here
+    
+
+</script>
+</html>
