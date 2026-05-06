@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Constructors</title>
+</head>
+<body>
+    <script>
+        //object constructor
+            function Player(name, marker) {
+            this.name = name;
+            this.marker = marker;
+            this.sayName = function() {
+                console.log(this.name);
+            };
+            }
+            //creating new objects
+            const player1 = new Player("steve", "X");
+            const player2 = new Player("also steve", "O");
+            player1.sayName(); // logs "steve"
+            player2.sayName(); // logs "also steve"
+
+            //the prototype
+
+            Object.getPrototypeOf(player1) === Player.prototype; // returns true
+            Object.getPrototypeOf(player2) === Player.prototype; // returns true
+    </script>
+</body>
+</html>
