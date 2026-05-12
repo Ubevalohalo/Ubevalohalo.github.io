@@ -15,7 +15,117 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+<style>
+#projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem;
+            gap: 1rem;
+        }
+        .projectCard {
+            background-color: #FFE9F9;
+            width: 10rem;
+            border: 2px solid #FFE9F9;
+            transition: transform 0.5s ease;
+            flex: 1 1 10rem; /* Add this line */
+            max-width: 30rem;
+        }
+        .projectCard img {
+            width: 94%;
+            margin: 3%;
+        }
+        .projectCard h4 {
+            background-color: black;
+            width: 94%;
+            color: #FFE9F9;
+            margin: 3% auto;
+            text-align: center;
+            padding: 3% 0%;
+            font-weight: bold;
+            font-size: 150%;
+        }
+        .projectCard a {
+            text-decoration: none;
+        }
+        .projectCard:hover {
+            transform: translateY(-25px);
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 400%;
+            }
+        }
+        /*----------------NEW RESPONSIVE PROJECT CARD STYLES*/
+/*
+  The projects container is now a CSS Grid.
+  This allows for a fixed, uniform grid structure where spacing
+  is consistent regardless of the number of items in the last row.
+*/
+#projects {
+    display: grid;
+    /*
+      Setting a default gap here, which can be overridden by media queries.
+      This value is used on screens larger than 1040px.
+    */
+    gap: 1.5rem;
+    justify-items: center; /* Centers items within their grid cells */
+}
+.projectCard {
+    background-color: #FFE9F9;
+    border: 2px solid #FFE9F9;
+    transition: transform 0.5s ease;
+    width: 100%; /* Ensures the card takes up the full width of its grid cell */
+}
+.projectCard img {
+    width: 94%;
+    margin: 3%;
+}
+.projectCard h4 {
+    background-color: black;
+    font-weight: 300;
+    color: #FFE9F9;
+    margin: 3% auto;
+    text-align: center;
+    padding: 3% 0%;
+    font-size: 200%;
+}
+.projectCard p {
+    text-align: left;
+    padding: 0.25rem 1rem;
+    color: black;
+}
+.projectCard:hover {
+    transform: scale(1.05);
+}
+/*----------------PROJECT CARD MEDIA QUERIES FOR CSS GRID*/
+/*
+  Desktop screens and larger: 4 cards per row.
+  The rule now applies to all screens 1040px and up.
+*/
+@media (min-width: 1040px) {
+    #projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* Tablet screens: 3 cards per row with smaller gaps */
+@media (min-width: 601px) and (max-width: 1039px) {
+    #projects {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem; /* Smaller gaps for tablet view */
+    }
+}
+/*
+  Mobile screens: 1 card per row that fills the width of the container.
+  The gaps are also made smaller.
+*/
+@media (max-width: 600px) {
+    #projects {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem; /* Smallest gaps for mobile view */
+    }
+}
+</style>
 </head>
 <body>
     <main>
