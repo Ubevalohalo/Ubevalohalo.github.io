@@ -2,19 +2,6 @@ function createNavBar() {
             const navBarHTML = `
                 <nav>
             
-
-                        <div class="menu-icon" id="menuIcon">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#start">Start</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
-
-
             
             
             
