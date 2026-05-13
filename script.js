@@ -3,19 +3,7 @@
 function createNavBar() {
             const navBarHTML = `
                 <nav>
-                     <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
 
-            <div class="nav-links">
-                <ul id="navList">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                </ul>
-            </div>
                     <div id="icons">
                         <a href="mailto:isabellaepena04@Gmail.com">
                             <img src="emailIconDarkMode.png">
