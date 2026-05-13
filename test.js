@@ -1,12 +1,10 @@
-// CREATE NAVBAR
-function createNavBar() {
+// CREATE NAV
+function createNav() {
 
-    const navContainer = document.getElementById("navContainer");
-
-    navContainer.innerHTML = `
+    const navHTML = `
         <nav>
 
-            <div class="hamburger-menu">
+            <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -14,21 +12,23 @@ function createNavBar() {
 
             <div class="nav-links">
                 <ul id="navList">
-                    <li><a href="index.html">Start</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
                 </ul>
             </div>
 
         </nav>
     `;
+
+    document.getElementById("navContainer").innerHTML = navHTML;
 }
 
 
-// HAMBURGER MENU
-function setupHamburgerMenu() {
+// HAMBURGER FUNCTIONALITY
+function setupHamburger() {
 
-    const hamburger = document.querySelector(".hamburger-menu");
+    const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
 
     hamburger.addEventListener("click", () => {
@@ -36,6 +36,7 @@ function setupHamburgerMenu() {
         navLinks.classList.toggle("active");
     });
 
+    // close on click
     document.querySelectorAll("#navList a").forEach(link => {
         link.addEventListener("click", () => {
             hamburger.classList.remove("active");
@@ -47,6 +48,6 @@ function setupHamburgerMenu() {
 
 // INIT
 window.onload = function () {
-    createNavBar();
-    setupHamburgerMenu();
+    createNav();
+    setupHamburger();
 };
