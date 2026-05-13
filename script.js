@@ -1,9 +1,32 @@
+Make a fully functioning hamburger menu with this code:
 
+My JavaScript:
+
+:
+- switch css elements, light mode and dark mode
+*/
 //automate the nav
 function createNavBar() {
             const navBarHTML = `
                 <nav>
-
+                    <div id="viewModes">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="hamburger-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <div id="pages" class="nav-links">
+                        <ul id="navList">
+                            <li><a href="index.html">Start</a></li>
+                            <li><a href="about.html" id='aboutPage'>About</a></li>
+                            <li><a href="projects.html" id='projectsPage'>Projects</a></li>
+                        </ul>
+                    </div>
                     <div id="icons">
                         <a href="mailto:isabellaepena04@Gmail.com">
                             <img src="emailIconDarkMode.png">
@@ -133,3 +156,19 @@ window.onload = function() {
     startFirstTypewriterEffect()
     // Call the first typewriter function after a 2 sec delay
 }
+
+My HTML:
+
+body>    
+    <main>
+        <section class="welcome">
+            <h1 class="main-title-typewriter">Welcome to my Portfolio!</h1>
+            <h3 class="subtitle-typewriter">- Isabella Pena</h3>
+        </section>
+        <section id="viewProjects" class="fade-in-up-on-scroll">
+            <h2>Engaging. Powerful. Pretty. </h2>
+            <h3>Full Stack Developer.</h3>
+            <a href="projects.html" class="projectButton">View my Projects</a>
+        </section>
+        <h2 class="fade-in-up-on-scroll">My Work and I</h2>
+        <section id="workingWithMe"
