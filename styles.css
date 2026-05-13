@@ -96,7 +96,74 @@ nav {
     grid-template-rows: 1fr;
     z-index: 1000;
 
+
+    
+
 }
+
+/*nav area for experiment*/
+/* HAMBURGER */
+
+.hamburger-menu {
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+    margin-right: 1rem;
+
+}
+
+.bar {
+
+    width: 28px;
+
+    height: 3px;
+
+    background-color: var(--lightPink);
+
+    transition: 0.3s;
+
+}
+/* ANIMATION */
+
+.hamburger-menu.active .bar:nth-child(1) {
+
+    transform: rotate(45deg) translateY(12px);
+
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+
+    transform: rotate(-45deg) translateY(-12px);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -184,13 +251,13 @@ footer #connections div img{
 }
 /*----------------END FOOTER SECTION*/
 
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     nav, main  {
         margin: 0 auto;
         padding: 1rem;
     }
     nav {
-      justify-content: flex-end; /* Align other nav elements to the right */
+      justify-content: flex-end; 
     }
     h1 {
       font-size: 200%;
@@ -208,7 +275,7 @@ footer #connections div img{
     footer #connections div a img {
       width: 4rem;
     }
-}
+}*/
 /*This is for the fade in of elements*/
 .fade-in-up-on-scroll {
   opacity: 0;
@@ -221,4 +288,219 @@ footer #connections div img{
 }
 .subtitle-typewriter {
   visibility: hidden;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    /* ================= NAV ================= */
+
+    nav {
+
+        display: flex !important;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 1rem 1.5rem;
+
+        position: relative;
+
+        overflow: visible;
+
+    }
+
+    /* HIDE DESKTOP ELEMENTS */
+
+    #viewModes,
+    #icons {
+
+        display: none;
+
+    }
+
+    /* ================= HAMBURGER ================= */
+
+    .hamburger-menu {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        cursor: pointer;
+
+        z-index: 2000;
+
+    }
+
+    .bar {
+
+        width: 28px;
+
+        height: 3px;
+
+        background-color: var(--lightPink);
+
+        transition: all 0.3s ease;
+
+    }
+
+    /* ANIMATION INTO X */
+
+    .hamburger-menu.active .bar:nth-child(1) {
+
+        transform: rotate(45deg) translateY(12px);
+
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+
+        opacity: 0;
+
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+
+        transform: rotate(-45deg) translateY(-12px);
+
+    }
+
+    /* ================= DROPDOWN ================= */
+
+    nav #pages {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background-color: var(--black);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+
+        z-index: 1500;
+
+        border-top: none;
+
+    }
+
+    nav #pages.active {
+
+        max-height: 500px;
+
+        border-top: 2px solid var(--lightPink);
+
+    }
+
+    /* ================= MOBILE LINKS ================= */
+
+    nav ul {
+
+        list-style: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 1.5rem;
+
+        margin: 0;
+
+        padding: 2rem 0;
+
+    }
+
+    nav ul li {
+
+        padding: 0;
+
+    }
+
+    nav ul li a {
+
+        color: var(--lightPink);
+
+        text-decoration: none;
+
+        font-size: 1.2rem;
+
+        transition: color 0.3s ease;
+
+    }
+
+    nav ul li a:hover {
+
+        color: var(--darkPink);
+
+    }
+
+    /* ================= MOBILE TYPOGRAPHY ================= */
+
+    h1 {
+
+        font-size: 200%;
+
+    }
+
+    h2 {
+
+        font-size: 250%;
+
+    }
+
+    h3 {
+
+        font-size: 125%;
+
+    }
+
+    p,
+    li {
+
+        font-size: 110%;
+
+    }
+
+    /* ================= IMAGES ================= */
+
+    img {
+
+        max-width: 100%;
+
+        height: auto;
+
+    }
+
+    footer #connections {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 2rem;
+
+    }
+
+    footer #connections div img {
+
+        width: 4rem;
+
+    }
+
 }

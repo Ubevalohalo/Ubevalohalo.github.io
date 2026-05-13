@@ -1,55 +1,77 @@
+//automate the nav
 function createNavBar() {
-            const navBarHTML = `
-                <nav>
-            
+    const navBarHTML = `
+        <nav>
 
-                        <div class="menu-icon" id="menuIcon">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#start">Start</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
+            <div id="viewModes">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
 
-            
-            
-            
-            
-                    <div id="pages" class="nav-links">
-                        <ul id="navList">
-                            <li><a href="index.html">Start</a></li>
-                            <li><a href="about.html" id='aboutPage'>About</a></li>
-                            <li><a href="projects.html" id='projectsPage'>Projects</a></li>
-                        </ul>
-                    </div>
-                    <div id="icons">
-                        <a href="mailto:isabellaepena04@Gmail.com">
-                            <img src="emailIconDarkMode.png">
-                        </a>
-                        <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
-                            <img src="linkedInIconDarkMode.png">
-                        </a>
-                        <a href="resume.html">
-                            <img src="resumeIconDarkMode.png">
-                        </a>
-                    </div>
-                </nav>
-            `;
+            <!-- HAMBURGER -->
+            <div class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- LINKS -->
+            <div id="pages" class="nav-links">
+                <ul id="navList">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="about.html" id="aboutPage">About</a></li>
+                    <li><a href="projects.html" id="projectsPage">Projects</a></li>
+                </ul>
+            </div>
+
+            <!-- ICONS -->
+            <div id="icons">
+                <a href="mailto:isabellaepena04@Gmail.com">
+                    <img src="emailIconDarkMode.png">
+                </a>
+
+                <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
+                    <img src="linkedInIconDarkMode.png">
+                </a>
+
+                <a href="resume.html">
+                    <img src="resumeIconDarkMode.png">
+                </a>
+            </div>
+
+        </nav>
+    `;
+
     document.body.insertAdjacentHTML('afterbegin', navBarHTML);
-};
+}
 
-const menuIcon = document.getElementById('menuIcon');
-    const navLinks = document.getElementById('navLinks');
+function setupHamburgerMenu() {
 
-    menuIcon.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    const hamburger = document.querySelector(".hamburger-menu");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+
     });
 
+    // close menu after clicking a link
+    document.querySelectorAll("#navList a").forEach(link => {
 
+        link.addEventListener("click", () => {
 
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+}
 
 //automate the footer
 function createFooter() {
@@ -159,9 +181,9 @@ function startSecondTypewriterEffect() {
 // The main function that runs when the page is fully loaded
 window.onload = function() {
     createNavBar();
+    setupHamburgerMenu();
     createFooter();
     underlineCurrentPage();
     setupScrollAnimation();
-    startFirstTypewriterEffect()
-    // Call the first typewriter function after a 2 sec delay
+    startFirstTypewriterEffect();
 }
