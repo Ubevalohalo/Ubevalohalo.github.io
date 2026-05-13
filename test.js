@@ -1,33 +1,96 @@
-const navBarHTML = `
-    <nav>
+// CREATE NAVBAR
+function createNavBar() {
 
-        <div class="hamburger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+    const navBarHTML = `
+        <nav>
 
-        <div id="pages" class="nav-links">
-            <ul id="navList">
-                <li><a href="index.html">Start</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </div>
+            <div class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-        <div id="icons">
-            <a href="#">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
-            </a>
+            <div id="pages" class="nav-links">
+                <ul id="navList">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </div>
 
-            <a href="#">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
-            </a>
+            <div id="icons">
+                <a href="mailto:isabellaepena04@gmail.com">
+                    <img src="emailIconDarkMode.png" alt="Email Icon">
+                </a>
 
-            <a href="#">
-                <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
-            </a>
-        </div>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="linkedInIconDarkMode.png" alt="LinkedIn Icon">
+                </a>
 
-    </nav>
-`;
+                <a href="resume.html">
+                    <img src="resumeIconDarkMode.png" alt="Resume Icon">
+                </a>
+            </div>
+
+        </nav>
+    `;
+
+    // INSERT NAVBAR INTO SPECIFIC CONTAINER
+    document
+        .getElementById("navContainer")
+        .insertAdjacentHTML("beforeend", navBarHTML);
+}
+
+
+
+/* =========================
+   HAMBURGER FUNCTIONALITY
+========================= */
+
+function setupHamburgerMenu() {
+
+    const hamburger = document.querySelector(".hamburger-menu");
+
+    const navLinks = document.querySelector(".nav-links");
+
+    const navItems = document.querySelectorAll("#navList a");
+
+
+    // OPEN/CLOSE MENU
+    hamburger.addEventListener("click", () => {
+
+        hamburger.classList.toggle("active");
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    // CLOSE MENU WHEN LINK CLICKED
+    navItems.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            hamburger.classList.remove("active");
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+}
+
+
+
+/* =========================
+   PAGE LOAD
+========================= */
+
+window.onload = function() {
+
+    createNavBar();
+
+    setupHamburgerMenu();
+
+}
