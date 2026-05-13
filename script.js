@@ -29,7 +29,35 @@ function createNavBar() {
                     </div>
                 </nav>
             `;
-    document.body.insertAdjacentHTML('afterbegin', navBarHTML);
+    document.getElementById("navContainer").innerHTML = navHTML;
+}
+
+
+// HAMBURGER FUNCTIONALITY
+function setupHamburger() {
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+    });
+
+    // close on click
+    document.querySelectorAll("#navList a").forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+        });
+    });
+}
+
+
+// INIT
+window.onload = function () {
+    createNav();
+    setupHamburger();
 };
 //automate the footer
 function createFooter() {
@@ -138,7 +166,6 @@ function startSecondTypewriterEffect() {
 
 // The main function that runs when the page is fully loaded
 window.onload = function() {
-    createNavBar();
     createFooter();
     underlineCurrentPage();
     setupScrollAnimation();
