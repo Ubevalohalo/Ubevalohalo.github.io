@@ -36,7 +36,49 @@ function createNavBar() {
                     </div>
                 </nav>
             `;
-    document.body.insertAdjacentHTML('afterbegin', navBarHTML);
+    
+
+// hamburger menu
+
+function setupHamburgerMenu() {
+
+    const hamburger = document.querySelector('.hamburger-menu');
+
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+
+        // open/close menu
+
+        navLinks.classList.toggle('active');
+
+        // animate hamburger into X
+
+        hamburger.classList.toggle('active');
+    });
+const navItems = document.querySelectorAll('#navList a');
+
+navItems.forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        navLinks.classList.remove('active');
+
+        hamburger.classList.remove('active');
+
+    });
+
+});
+}
+
+
+
+
+
+
+
+
+document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 };
 //automate the footer
 function createFooter() {
@@ -153,10 +195,17 @@ function startSecondTypewriterEffect() {
 
 // The main function that runs when the page is fully loaded
 window.onload = function() {
+
     createNavBar();
+
     createFooter();
+
+    setupHamburgerMenu();
+
     underlineCurrentPage();
+
     setupScrollAnimation();
-    startFirstTypewriterEffect()
-    // Call the first typewriter function after a 2 sec delay
+
+    startFirstTypewriterEffect();
+
 }
