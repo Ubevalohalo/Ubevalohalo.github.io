@@ -5,6 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="test.css">
     <title>My Web Page</title>
+    <style>
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+/* hidden on desktop */
+
+.hamburger-menu {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE ONLY
+========================= */
+
+@media (max-width: 768px) {
+
+    /* show hamburger */
+
+    .hamburger-menu {
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        cursor: pointer;
+
+        z-index: 1001;
+    }
+
+
+    /* hamburger bars */
+
+    .bar {
+
+        width: 30px;
+
+        height: 3px;
+
+        background-color: white;
+
+        transition: all 0.3s ease;
+    }
+
+
+    /* animate into X */
+
+    .hamburger-menu.active .bar:nth-child(1) {
+
+        transform: rotate(45deg) translateY(12px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+
+        transform: rotate(-45deg) translateY(-12px);
+    }
+
+
+    /* mobile dropdown menu */
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background-color: black;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+    }
+
+
+    /* opened menu */
+
+    .nav-links.active {
+
+        max-height: 500px;
+    }
+
+
+    /* stack nav items vertically */
+
+    #navList {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 2rem;
+
+        padding: 2rem 0;
+    }
+
+
+    /* optional: hide icons on mobile */
+
+    #icons {
+
+        display: none;
+    }
+
+}
+    </style>
 </head>
 <body>
 
