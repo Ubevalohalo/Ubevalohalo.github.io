@@ -1,11 +1,19 @@
+
+//automate the nav
 function createNavBar() {
             const navBarHTML = `
                 <nav>
-            
-            
-            
-            
-            
+                    <div id="viewModes">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="hamburger-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                     <div id="pages" class="nav-links">
                         <ul id="navList">
                             <li><a href="index.html">Start</a></li>
@@ -28,17 +36,6 @@ function createNavBar() {
             `;
     document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 };
-
-const menuIcon = document.getElementById('menuIcon');
-    const navLinks = document.getElementById('navLinks');
-
-    menuIcon.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-
-
-
 //automate the footer
 function createFooter() {
             const footerHTML = `
