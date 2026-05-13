@@ -1,10 +1,12 @@
-/*NOTES:
-- switch css elements, light mode and dark mode
-*/
-//automate the nav
 function createNavBar() {
             const navBarHTML = `
                 <nav>
+                    <div id="viewModes">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                     <div class="hamburger-menu">
                         <span class="bar"></span>
                         <span class="bar"></span>
@@ -30,49 +32,7 @@ function createNavBar() {
                     </div>
                 </nav>
             `;
-    
-
-// hamburger menu
-
-function setupHamburgerMenu() {
-
-    const hamburger = document.querySelector('.hamburger-menu');
-
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-
-        // open/close menu
-
-        navLinks.classList.toggle('active');
-
-        // animate hamburger into X
-
-        hamburger.classList.toggle('active');
-    });
-const navItems = document.querySelectorAll('#navList a');
-
-navItems.forEach(link => {
-
-    link.addEventListener('click', () => {
-
-        navLinks.classList.remove('active');
-
-        hamburger.classList.remove('active');
-
-    });
-
-});
-}
-
-
-
-
-
-
-
-
-document.body.insertAdjacentHTML('afterbegin', navBarHTML);
+    document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 };
 //automate the footer
 function createFooter() {
@@ -179,27 +139,12 @@ function startSecondTypewriterEffect() {
     typeWriter(element, originalText, 100, null);
 }
 
-
-
-
-
-
-
-
-
 // The main function that runs when the page is fully loaded
 window.onload = function() {
-
     createNavBar();
-
     createFooter();
-
-    setupHamburgerMenu();
-
     underlineCurrentPage();
-
     setupScrollAnimation();
-
-    startFirstTypewriterEffect();
-
+    startFirstTypewriterEffect()
+    // Call the first typewriter function after a 2 sec delay
 }
