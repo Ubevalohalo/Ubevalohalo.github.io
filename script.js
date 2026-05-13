@@ -1,10 +1,4 @@
-Make a fully functioning hamburger menu with this code:
 
-My JavaScript:
-
-:
-- switch css elements, light mode and dark mode
-*/
 //automate the nav
 function createNavBar() {
             const navBarHTML = `
@@ -156,19 +150,3 @@ window.onload = function() {
     startFirstTypewriterEffect()
     // Call the first typewriter function after a 2 sec delay
 }
-
-My HTML:
-
-body>    
-    <main>
-        <section class="welcome">
-            <h1 class="main-title-typewriter">Welcome to my Portfolio!</h1>
-            <h3 class="subtitle-typewriter">- Isabella Pena</h3>
-        </section>
-        <section id="viewProjects" class="fade-in-up-on-scroll">
-            <h2>Engaging. Powerful. Pretty. </h2>
-            <h3>Full Stack Developer.</h3>
-            <a href="projects.html" class="projectButton">View my Projects</a>
-        </section>
-        <h2 class="fade-in-up-on-scroll">My Work and I</h2>
-        <section id="workingWithMe"
