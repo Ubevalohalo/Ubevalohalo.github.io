@@ -82,66 +82,6 @@ h4 {
 p, li {
     font-size: 150%;
 }
-/*this is for the toggle switch*/
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 4rem;
-  height: 2rem;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--lightPink);
-  -webkit-transition: .4s;
-  transition: .4s;
-  border: solid 2px;
-  border-color: var(--lightPink);
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 24px;
-  width: 24px;
-  left: 4px;
-  bottom: 2.5px;
-  background-color: var(--darkPink);
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-input:checked + .slider {
-  background-color: black;
-}
-input:focus + .slider {
-  box-shadow: 0 0 1px black;
-}
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-/* Rounded sliders */
-.slider.round {
-  border-radius: 10rem;
-}
-.slider.round:before {
-  border-radius: 70%;
-}
-/*end toggle switch*/
 nav {
     border-style: solid;
     border-width: 2px;
@@ -171,7 +111,7 @@ nav ul li a {
     text-decoration: none;
     color: var(--lightPink);
     position: relative;
-    display: inline-block; /* Ensures transform works as expected */
+    display: inline-block; 
     transition: transform 0.5s ease;
     font-size: 90%;
 
@@ -181,13 +121,6 @@ nav ul li a:hover {
     color: var(--lightPink);
     font-weight: bold;
     transform: translateY(-10px); /* Move up smoothly */
-}
-nav #viewModes{
-  grid-column: 1/2;
-  grid-row: 1/2;
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
 }
 nav #pages {
   grid-column: 2/3;
@@ -254,58 +187,6 @@ footer #connections div img{
 /*----------------END FOOTER SECTION*/
 
 @media (max-width: 480px) {
-    /* Hamburger menu styles */
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 2rem;
-        height: 2rem;
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        cursor: pointer;
-    }
-    .hamburger-menu .bar {
-        width: 100%;
-        height: 3px;
-        background-color: var(--lightPink);
-        transition: all 0.3s ease-in-out;
-    }
-    /*I WANNA SEE IF I CAN MAKE THIS PART WITH JS*/
-    /* Hide the default navigation links */
-    .nav-links {
-        display: none;
-    }
-    /* When the nav is active, show the links in a full-screen overlay */
-    nav.active .nav-links {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        justify-content: center;
-        align-items: center;
-        z-index: 99;
-    }
-    nav.active .nav-links ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-    /* Animate the hamburger menu into an 'X' */
-    nav.active .hamburger-menu .bar:nth-child(2) {
-        opacity: 0;
-    }
-    nav.active .hamburger-menu .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 8px);
-    }
-    nav.active .hamburger-menu .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -8px);
-    }
-    /*END JS SECTION FOR NOW IG*/
     nav, main  {
         margin: 0 auto;
         padding: 1rem;
