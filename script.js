@@ -1,11 +1,6 @@
 function createNavBar() {
             const navBarHTML = `
                 <nav>
-                    <div class="hamburger-menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
                     <div id="pages" class="nav-links">
                         <ul id="navList">
                             <li><a href="index.html">Start</a></li>
@@ -72,16 +67,6 @@ function underlineCurrentPage (){
         return
     };
 }
-
-// Add toggle functionality for hamburger menu
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const navLinks = document.querySelector(".nav-links");
-
-  hamburgerMenu.addEventListener("click", function () {
-    navLinks.classList.toggle("show");
-  });
-});
 
 //fadeIn and out on scroll
 function setupScrollAnimation() {
