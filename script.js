@@ -79,6 +79,16 @@ function underlineCurrentPage (){
     };
 }
 
+// Add toggle functionality for hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburgerMenu.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+});
+
 //fadeIn and out on scroll
 function setupScrollAnimation() {
   const elementsToFadeInUpOnScroll = document.querySelectorAll(".fade-in-up-on-scroll");
