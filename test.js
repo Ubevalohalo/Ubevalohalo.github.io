@@ -33,3 +33,9 @@ function createNavBar() {
                     </div>
                 </nav>
             `;
+            
+            
+            
+window.onload = function() {
+    createNavBar();
+}
