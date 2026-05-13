@@ -5,12 +5,6 @@
 function createNavBar() {
             const navBarHTML = `
                 <nav>
-                    <div id="viewModes">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
                     <div class="hamburger-menu">
                         <span class="bar"></span>
                         <span class="bar"></span>
