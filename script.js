@@ -1,8 +1,30 @@
-
-//automate the nav
 function createNavBar() {
             const navBarHTML = `
                 <nav>
+            
+
+                        <div class="menu-icon" id="menuIcon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#start">Start</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+
+            
+            
+            
+            
+                    <div id="pages" class="nav-links">
+                        <ul id="navList">
+                            <li><a href="index.html">Start</a></li>
+                            <li><a href="about.html" id='aboutPage'>About</a></li>
+                            <li><a href="projects.html" id='projectsPage'>Projects</a></li>
+                        </ul>
+                    </div>
                     <div id="icons">
                         <a href="mailto:isabellaepena04@Gmail.com">
                             <img src="emailIconDarkMode.png">
@@ -16,11 +38,16 @@ function createNavBar() {
                     </div>
                 </nav>
             `;
-
-
-    document.body.insertAdjacentHTML('beforestart', navBarHTML);
-
+    document.body.insertAdjacentHTML('afterbegin', navBarHTML);
 };
+
+const menuIcon = document.getElementById('menuIcon');
+    const navLinks = document.getElementById('navLinks');
+
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
 
 
 
@@ -131,6 +158,7 @@ function startSecondTypewriterEffect() {
 
 // The main function that runs when the page is fully loaded
 window.onload = function() {
+    createNavBar();
     createFooter();
     underlineCurrentPage();
     setupScrollAnimation();
