@@ -1,3 +1,5 @@
+
+
 /*
 colors:
 light pink: #FFE9F9
@@ -43,16 +45,13 @@ button font color:
 - dark hover: black
 footer and nav image sources: 
 
-
 */
-
 
 :root {
   --lightPink:#FFE9F9;
   --darkPink:#F35A9C;
   --black:black;
 }
-
 
 /*this starts the regular css*/
 body {
@@ -255,155 +254,92 @@ footer #connections div img{
 /*----------------END FOOTER SECTION*/
 
 @media (max-width: 480px) {
-
-    /* =========================
-       GENERAL MOBILE STYLES
-    ========================= */
-
-    nav,
-    main {
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 200%;
-    }
-
-    h2 {
-        font-size: 300%;
-    }
-
-    h3 {
-        font-size: 100%;
-    }
-
-    img {
-        width: 100%;
-        margin: 1rem auto;
-    }
-
-    footer #connections div a img {
-        width: 4rem;
-    }
-
-    /* =========================
-       NAV LAYOUT
-    ========================= */
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        position: sticky;
-        top: 0;
-
-        padding: 1rem;
-
-        overflow: visible;
-    }
-
-    nav #icons {
-        display: none;
-    }
-
-    nav #pages {
-        width: 100%;
-    }
-
-    /* =========================
-       HAMBURGER MENU
-    ========================= */
-
+    /* Hamburger menu styles */
     .hamburger-menu {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        gap: 6px;
-
-        cursor: pointer;
-
-        z-index: 1001;
-    }
-
-    .hamburger-menu .bar {
+        justify-content: space-around;
         width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        cursor: pointer;
+    }
+    .hamburger-menu .bar {
+        width: 100%;
         height: 3px;
-
         background-color: var(--lightPink);
-
-        transition: all 0.3s ease;
+        transition: all 0.3s ease-in-out;
     }
-
-    /* hamburger animation */
-
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: rotate(45deg) translateY(12px);
+    /*I WANNA SEE IF I CAN MAKE THIS PART WITH JS*/
+    /* Hide the default navigation links */
+    .nav-links {
+        display: none;
     }
-
-    .hamburger-menu.active .bar:nth-child(2) {
+    /* When the nav is active, show the links in a full-screen overlay */
+    nav.active .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+    nav.active .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    /* Animate the hamburger menu into an 'X' */
+    nav.active .hamburger-menu .bar:nth-child(2) {
         opacity: 0;
     }
-
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translateY(-12px);
+    nav.active .hamburger-menu .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
     }
-
-    /* =========================
-       MOBILE NAV MENU
-    ========================= */
-
-    .nav-links {
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        background-color: var(--black);
-
-        max-height: 0;
-
-        overflow: hidden;
-
-        transition: max-height 0.4s ease;
-
-        z-index: 999;
+    nav.active .hamburger-menu .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -8px);
     }
-
-    .nav-links.active {
-        max-height: 500px;
+    /*END JS SECTION FOR NOW IG*/
+    nav, main  {
+        margin: 0 auto;
+        padding: 1rem;
     }
-
-    .nav-links ul {
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 2rem;
-
-        padding: 2rem 0;
-
-        margin: 0;
+    nav {
+      justify-content: flex-end; /* Align other nav elements to the right */
     }
-
-    .nav-links ul li {
-        padding: 0;
+    h1 {
+      font-size: 200%;
     }
-
-    .nav-links ul li a {
-        font-size: 140%;
+    h2 {
+      font-size: 300%;
     }
-
-    /* =========================
-       FOOTER MOBILE
-    ========================= */
-
-    footer #connections {
-        flex-direction: column;
-        align-items: center;
+    h3 {
+      font-size: 100%;
     }
+    img {
+      width: 100%;
+      margin: 1rem auto;
+    }
+    footer #connections div a img {
+      width: 4rem;
+    }
+}
+/*This is for the fade in of elements*/
+.fade-in-up-on-scroll {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in-up-on-scroll.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.subtitle-typewriter {
+  visibility: hidden;
 }
