@@ -496,11 +496,17 @@ footer #connections div img{
         gap: 2rem;
 
     }
-
+#viewModes {
+    display: none;
+}
     footer #connections div img {
 
         width: 4rem;
 
     }
 
+}
+
+#viewModes {
+    display: none;
 }
