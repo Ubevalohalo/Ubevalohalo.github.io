@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Pixel Arcade</title>
+    <title>Lovebyte Arcade</title>
     <link rel="stylesheet" href="../gameCSSframework.css">
       <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,90 +15,112 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 1rem;
+            gap: 0.5rem;
+        }
+        .projectCard {
+            background-color: #FFE9F9;
+            width: 5rem;
+            border: 2px solid #FFE9F9;
+            transition: transform 0.5s ease;
+            flex: 1 1 10rem; /* Add this line */
+            max-width: 15rem;
+        }
+        .projectCard img {
+            width: 94%;
+            margin: 3%;
+        }
+        .projectCard h4 {
+            background-color: black;
+            width: 94%;
+            color: #FFE9F9;
+            margin: 3% auto;
+            text-align: center;
+            padding: 3% 0%;
+            font-weight: bold;
+            font-size: 90%;
+        }
+        .projectCard a {
+            text-decoration: none;
+        }
+        .projectCard:hover {
+            transform: translateY(-25px);
+        }
 
+    </style>
 </head>
 <body>
     <main>
 
         <section class="gaming">
             <section class="title">
-                <h1>Pink Pixel Arcade</h1>
+                <h1>Lovebyte Arcade</h1>
             </section>
             <section class="about">
                 <h2>About this Game</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                </p>
+Lovebyte Arcade is a cozy collection of playful, heart-inspired mini games made with charm, creativity, and a touch of whimsy. Each game is designed to feel cute, vibrant, and visually delightful, all while blending soft aesthetics with interactive gameplay that’s just as fun to play as it is to look at.
+</p>
             </section>
             <section class="howToPlay">
                 <h2>How to Play</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                </p>
+Pick a game from the arcade and jump right in! Follow the instructions shown beside each game as you play. Every mini game is heart-themed, with its own simple rules and playful objectives, just jump in and enjoy discovering how each one works!
+               </p>
             </section>
              <section class="miniPlayer">
                 <div id="projects">
-                <div class="projectCard">
-                    <a href="../matchingGame/matching.html"><img src="../../imagePlaceholder.png">
-                    <h4>Lumen Ledger</h4>
-                    <p>Where financial clarity becomes direction</p>
-                    </a>
-                </div>
-                <!--
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    <sub>Subtitle</sub>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                <div class="projectCard">
-                    <a href="projectTemplate.html"><img src="imagePlaceholder.png">
-                    <h4>Example Placeholder</h4>
-                    </a>
-                </div>
-                -->
+                    <div class="projectCard">
+                        <a href="../matchingGame/matching.html"><img src="../matchingGame/matchingCover.png">
+                        <h4>Heart & Harvest Matching Game</h4>
+                        </a>
+                    </div>
+                    <div class="projectCard">
+                        <a href="***"><img src="../matchingGame/matchingCover.png">
+                        <h4>Hearts in a Row</h4>
+                        </a>
+                    </div>
+                    <div class="projectCard">
+                        <a href="***"><img src="../matchingGame/matchingCover.png">
+                        <h4>Sweetheart Chess</h4>
+                        </a>
+                    </div>
+                    <div class="projectCard">
+                        <a href="***"><img src="../matchingGame/matchingCover.png">
+                        <h4>Heartshot</h4>
+                        </a>
+                    </div>
             </div>
             </section>
         </section>
         <section class="caseStudy">
             <h2>Project Breakdown</h2>
             <h3>Project Intent</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            <p>I created this game hub to deepen my understanding of core front-end development concepts through hands-on building rather than just theory. My goal was to design and develop a collection of small, interactive mini games that explore how structure, styling, and logic come together in real web experiences. Using HTML, CSS, and JavaScript, I focused on turning fundamental concepts into functional, engaging games that feel cohesive as a single arcade-style project.
+                <br><br>
+            At the same time, I wanted this project to serve as a portfolio piece that reflects my personality and design style, something visually cute, creative, and expressive that demonstrates both my technical abilities and my interest in building playful, user-focused interfaces. 
             </p>
             <h3>Tools & Techniques</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            <p>This project was built using HTML for structure, CSS for layout, styling, animations, and responsive design, and JavaScript for interactivity and game logic. I used event listeners to handle user interactions, DOM manipulation to dynamically update the UI, and conditional logic to control game states such as matching, scoring, and win/loss conditions.
+                <br><br>
+            I also incorporated techniques such as class toggling for animations (like card flipping), array manipulation for tracking game progress, and basic state management to control gameplay flow. CSS flexbox and grid were used to structure layouts, with media queries applied for responsive design across different screen sizes.
             </p>
             <h3>What I Learned</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            <p>Through building this project, I strengthened my understanding of how HTML, CSS, and JavaScript work together to create interactive experiences. I gained more confidence in managing game logic, especially tracking state, handling user input, and updating the interface dynamically based on actions.
+                <br><br>
+            I also improved my problem-solving skills through debugging and learned how important it is to structure code in a way that remains readable and scalable as complexity increases. Most importantly, I learned how to take abstract front-end concepts and turn them into fully functional, visually engaging projects that feel complete and intentional.
             </p>
         </section>
     </main>
     <footer>
-        <p>[NAME OF GAME AND HUB] © 2026 is proudly presented to you by creators Isabella and Rachel!</p>
-        <p>Programming and Development by Isabella Pena· Art and Design by Rachel Chavez</p>
-        <a href="###">Game Hub</a>
-        <a href="###">Back to My Portfolio</a>
-        <!-- back to top button-->
+        <p>Lovebyte © 2026 is proudly presented to you by Isabella Pena!</p>
+        <p>Design, Programming and Development by Isabella Pena</p>
+        <a href="../../projects.html">Back to My Portfolio</a>
     </footer>
 </body>
 </html>

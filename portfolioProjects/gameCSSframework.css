@@ -7,6 +7,24 @@
         - Lato
 
 */
+footer a {
+        text-decoration: none;
+        background-color: black;
+        color: #FFD6E0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        display: inline-block;
+        transition: transform 0.5s ease;
+        margin-right: 2rem;
+      }
+      footer a:hover {
+        background-color: #F35A9C;
+        color: black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: solid 2px black;
+        transform: translateY(-10px);
+      }
 body {
     background-color: #FFF6CA;
     font-family: "Montserrat", sans-serif;
@@ -15,7 +33,7 @@ body {
 }
 .gaming {
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
     grid-template-rows: 0.5fr 2fr 2fr 2fr;
     gap: 1rem;
 }
