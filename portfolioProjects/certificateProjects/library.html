@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project: Book</title>
+    <style>
+        table {
+            border: solid 2px black;
+        }
+        tr {
+            border: solid 2px black;
+        }
+        th, td {
+            border: solid 2px black;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <main id="textArea">
+        <h1>Library Exercise</h1>
+        <p>This is a table of various library books and their information.</p>
+        <table id="libraryLogTable">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Number of Pages</th>
+                <th>Have you read this book?</th>
+            </tr>
+        </table>
+    </main>
+</body>
+<script>
+//this is the array that I can push new book objects into
+    const bookLibraryArray =[];
+
+//create the object constructor, it's just a function
+    function book(title, author, numberOfPages, readYN){
+    //protects if the 'new' keyword is not used
+        if (!new.target) {
+            throw Error("You must use the 'new' operator to call the constructor");
+        }
+    //otherwise...
+    //these are the different values i am storing in my object
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.readYN = readYN;
+    //this is what information is displayed to the user regarding the book
+        this.info = (readYN + title + " written by " + author + ", which has " + numberOfPages + " pages.")
+    //now the function that displays all of the book's information
+        this.bookInfo = function(){
+            console.log(info);
+        };
+    };
+    /* this portion was just practice for it to console.log the book info
+    const prideAndPrejudice = new book("Pride and Prejudice", "Jane Austin", "450", "I have not read ");
+     const redFishBlueFish = new book("Red Fish Blue Fish", "Dr. Seuss", "20", "I have read ")
+    console.log(prideAndPrejudice.info);
+    console.log(redFishBlueFish.info);
+    */
+    
+//add a function that takes arguments to create a book (object). Store that book in an array
+    function addBookToLibrary(title, author, numberOfPages, readYN){
+        //create a new book object (using the constructor), and take from the parameters defined
+        //so the constructor goes in this variable now directly, not tied to this function but instead sitting within
+        const newLibraryBook = new book(title, author, numberOfPages, readYN)
+        //generate a unique ID for each book and attach it to the new book object
+        newLibraryBook.id = crypto.randomUUID();
+        //store that book in an array
+        bookLibraryArray.push(newLibraryBook)
+    };
+//testing if the previous function works
+    addBookToLibrary("title", "author", "number of pages", "read yes or no");
+    console.log(bookLibraryArray);
+//check that the new book has an id
+    console.log(bookLibraryArray[0]);
+
+
+//function that loops through the array and displays the books on the page, can be in a table or in cards
+    function displayLibraryBooks(){
+    //this is where the content will be posted
+        const libraryLog = document.getElementById('libraryLogTable');
+    //loop through the array = use a for loop (where do we start, where do we end, how fast are we going)
+        for (let i = 0; i < bookLibraryArray.length ; i++ ){
+        //display books on the page using a table
+            const currentBook = `
+                <tr>
+                    <td>
+                </tr>
+            `;
+      }
+    };
+
+
+
+
+
+
+
+</script>
+</html>
