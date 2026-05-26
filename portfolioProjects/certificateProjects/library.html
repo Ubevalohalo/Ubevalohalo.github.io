@@ -4,19 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Odin Project: Book</title>
+    <script src="https://kit.fontawesome.com/c3295fe299.js" crossorigin="anonymous"></script>
     <style>
-        table {
-            border: solid 2px black;
+        main {
+            width: 80%;
+            margin: auto;
+
         }
-        tr {
-            border: solid 2px black;
+        h1 {
+            color: #880D1E;
+            font-size: 500%;
+            text-align: center;
+            text-decoration: underline;
+        }
+        p {
+            color: #880D1E;
+        }
+        table {
+            border: solid 5px #880D1E;
+            background-color: #F49CBB;
+            border-radius: 1rem;
+            text-align: center;
+            margin: auto;
+            padding: 0.5rem;
+            width: 100%;
         }
         th, td {
-            border: solid 2px black;
+            border: solid 2px #880D1E;
+            background-color: white;
+            border-radius: 1rem;
             padding: 1rem;
             margin: 1rem;
         }
-
+        button {
+            border: solid 2px #880D1E;
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        button:hover {
+            border: solid 2px #880D1E;
+            background-color: #F49CBB;
+        }
+        button:active {
+            border: solid 2px #880D1E;
+            background-color: #880D1E;
+        }
     </style>
 </head>
 <body>
@@ -29,13 +63,53 @@
                 <th>Author</th>
                 <th>Number of Pages</th>
                 <th>Have you read this book?</th>
+                <th>Change Read Status</th>
+                <th>Delete Book</th>
             </tr>
         </table>
+        
+
+        <!--button for new book form-->
+        <button command="show-modal" commandfor="myDialog">Add a New Book!</button>
+        <dialog id="myDialog">
+            <p>Add your new book here:</p>
+            <!--form input areas-->
+            <form id="addBookForm">
+                <!--book title-->
+                <label for="title">Title:</label><br>
+                <input type="text" id="bookTitle" name="bookTitle" required><br>
+                <br>
+                <!--book author-->
+                <label for="author">Author:</label><br>
+                <input type="text" id="bookAuthor" name="bookAuthor" required><br>
+                <br>
+                <!--book number of pages-->
+                <label for="numberOfPages">Number of pages:</label><br>
+                <input type="number" id="pageAmount" min="1" name="pageAmount" required><br>
+                <br>
+                <!--read yet?-->
+                <label for="title">Have you read this book yet?</label><br>
+                    <!--yes option-->
+                    <input type="radio" id="readYes" name="readYN" value="Yes" required>
+                    <label for="readYes">Yes</label><br>
+                    <!--no option-->
+                    <input type="radio" id="readNo" name="readYN" value="No">
+                    <label for="readNo">No</label><br>
+                    <br>
+                <!--end form input areas-->
+                <button type="button" id="close">Never mind</button>
+                <button type="submit">Submit This Book</button>
+            </form>
+        </dialog> 
     </main>
 </body>
 <script>
 //this is the array that I can push new book objects into
-    const bookLibraryArray =[];
+    const bookLibraryArray =[
+        
+        
+        
+    ];
 
 //create the object constructor, it's just a function
     function book(title, author, numberOfPages, readYN){
@@ -56,12 +130,6 @@
             console.log(info);
         };
     };
-    /* this portion was just practice for it to console.log the book info
-    const prideAndPrejudice = new book("Pride and Prejudice", "Jane Austin", "450", "I have not read ");
-     const redFishBlueFish = new book("Red Fish Blue Fish", "Dr. Seuss", "20", "I have read ")
-    console.log(prideAndPrejudice.info);
-    console.log(redFishBlueFish.info);
-    */
     
 //add a function that takes arguments to create a book (object). Store that book in an array
     function addBookToLibrary(title, author, numberOfPages, readYN){
@@ -69,16 +137,11 @@
         //so the constructor goes in this variable now directly, not tied to this function but instead sitting within
         const newLibraryBook = new book(title, author, numberOfPages, readYN)
         //generate a unique ID for each book and attach it to the new book object
-        newLibraryBook.id = crypto.randomUUID();
+        const bookID = newLibraryBook.id = crypto.randomUUID();
         //store that book in an array
         bookLibraryArray.push(newLibraryBook)
-    };
-//testing if the previous function works
-    addBookToLibrary("title", "author", "number of pages", "read yes or no");
-    console.log(bookLibraryArray);
-//check that the new book has an id
-    console.log(bookLibraryArray[0]);
-
+        return(newLibraryBook);
+    }
 
 //function that loops through the array and displays the books on the page, can be in a table or in cards
     function displayLibraryBooks(){
@@ -88,15 +151,84 @@
         for (let i = 0; i < bookLibraryArray.length ; i++ ){
         //display books on the page using a table
             const currentBook = `
-                <tr>
+                <tr data-id="${bookLibraryArray[i].id}">
+                    <td>`+bookLibraryArray[i].title+`</td>
+                    <td>`+bookLibraryArray[i].author+`</td>
+                    <td>`+bookLibraryArray[i].numberOfPages+`</td>
+                    <td>`+bookLibraryArray[i].readYN+`</td>
+                    
                     <td>
+                        <input type="checkbox" id="readStatus" name="readCheckBox" value="read">
+                    </td>
+                    <td>
+                        <button id="deleteButton"><i class="fa-solid fa-trash" style="color: #880d1e;"></i></button>
+
+                    </td>
                 </tr>
             `;
+            libraryLog.innerHTML += currentBook;
+            console.log(bookLibraryArray[i].id)
       }
     };
+//function for 'New Book' button for a form popup
+    //define my target aka the form
+    const addBookForm = document.getElementById("addBookForm");
+    const closeButton = document.getElementById("close");
+    closeButton.addEventListener("click", function(event){
+        myDialog.close();
+        addBookForm.reset();
+    });
+    //add event listener for when the form is submitted
+    addBookForm.addEventListener('submit', function(event) {
+        debugger;
+        //stops reload of page
+        event.preventDefault();
+        //grab values from the form
+        const title = document.getElementById('bookTitle').value;
+        const author = document.getElementById('bookAuthor').value;
+        const numberOfPages = document.getElementById('pageAmount').value;
+        //this is from the radio
+        const readYNarray = document.querySelector('input[name="readYN"]:checked');
+        const readYN =readYNarray.value;
+        //call constructor function, fixes bug of objects added not having an id
+        const createdBook = addBookToLibrary(title,author,numberOfPages,readYN);
+        console.log(createdBook.id)
+        const dialogBox = document.getElementById('myDialog');
+        // close the dialog
+        dialogBox.close();
+        //clear what is already in the table
+        // target display area
+        const libraryLog = document.getElementById('libraryLogTable');
+        // clear old content first
+        libraryLog.innerHTML = ` <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Number of Pages</th>
+                <th>Have you read this book?</th>
+                <th>Change Read Status</th>
+                <th>Delete Book</th>
+            </tr>`;
+        //refresh the array
+        displayLibraryBooks();
+        //clear the form
+        addBookForm.reset();
+        // console.log(this.id) PROBLEM-> this refers to the form in this case, how do i get it to select the object being made?
+    });
+
+//delete button for the books
+    //define target
+    const deleteBook = document.getElementById("deleteButton");
+    deleteBook.addEventListener("click", function(){
+        const bookIdNumber = newLibraryBook[this].bookID;
+        const wholeBook = document.getElementById(bookIdNumber)
+    })
+    // deleteBook.addEventListener("click", function(event){
+
+    // });
 
 
-
+//calling all the functions!
+displayLibraryBooks();
 
 
 
