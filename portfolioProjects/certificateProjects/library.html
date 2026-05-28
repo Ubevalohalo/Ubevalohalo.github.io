@@ -17,8 +17,9 @@
             text-align: center;
             text-decoration: underline;
         }
-        p {
+        p,th, td {
             color: #880D1E;
+            font-size: 150%;
         }
         table {
             border: solid 5px #880D1E;
@@ -33,8 +34,7 @@
             border: solid 2px #880D1E;
             background-color: white;
             border-radius: 1rem;
-            padding: 1rem;
-            margin: 1rem;
+            padding: 0.5rem;
         }
         button {
             border: solid 2px #880D1E;
@@ -51,6 +51,12 @@
             border: solid 2px #880D1E;
             background-color: #880D1E;
         }
+        input[type="checkbox"]  {
+            width: 30px;
+            height: 30px;
+            accent-color: #880D1E; 
+        }
+       
     </style>
 </head>
 <body>
@@ -105,11 +111,7 @@
 </body>
 <script>
 //this is the array that I can push new book objects into
-    const bookLibraryArray =[
-        
-        
-        
-    ];
+    const bookLibraryArray =[];
 
 //create the object constructor, it's just a function
     function book(title, author, numberOfPages, readYN){
@@ -140,6 +142,8 @@
         const bookID = newLibraryBook.id = crypto.randomUUID();
         //store that book in an array
         bookLibraryArray.push(newLibraryBook)
+        //define the readStatus so that the checkbox is either checked or not
+       
         return(newLibraryBook);
     }
 
@@ -147,27 +151,34 @@
     function displayLibraryBooks(){
     //this is where the content will be posted
         const libraryLog = document.getElementById('libraryLogTable');
+
     //loop through the array = use a for loop (where do we start, where do we end, how fast are we going)
         for (let i = 0; i < bookLibraryArray.length ; i++ ){
+             let readStatus = "";
+        if (bookLibraryArray[i].readYN === "Yes") {
+            readStatus = "checked";
+        }
         //display books on the page using a table
             const currentBook = `
                 <tr data-id="${bookLibraryArray[i].id}">
                     <td>`+bookLibraryArray[i].title+`</td>
                     <td>`+bookLibraryArray[i].author+`</td>
                     <td>`+bookLibraryArray[i].numberOfPages+`</td>
-                    <td>`+bookLibraryArray[i].readYN+`</td>
+                    <td class ="readYN">`+bookLibraryArray[i].readYN+`</td>
                     
                     <td>
-                        <input type="checkbox" id="readStatus" name="readCheckBox" value="read">
+                        <input type="checkbox" id="readStatus" class="readStatusCheckBox" name="readCheckBox" value="read" ${readStatus}>
                     </td>
                     <td>
-                        <button id="deleteButton"><i class="fa-solid fa-trash" style="color: #880d1e;"></i></button>
+                        <button class="deleteButton"><i class="fa-solid fa-trash" style="color: #880d1e;"></i></button>
 
                     </td>
                 </tr>
             `;
             libraryLog.innerHTML += currentBook;
             console.log(bookLibraryArray[i].id)
+
+            return(bookLibraryArray[i].id);
       }
     };
 //function for 'New Book' button for a form popup
@@ -178,6 +189,22 @@
         myDialog.close();
         addBookForm.reset();
     });
+
+
+    //function to refresh the array
+    function refreshArrayOfBooks(){
+        // clear old content first
+        libraryLog.innerHTML = ` <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Number of Pages</th>
+                <th>Have you read this book?</th>
+                <th>Change Read Status</th>
+                <th>Delete Book</th>
+            </tr>`;
+        //refresh the array
+        displayLibraryBooks();
+    }
     //add event listener for when the form is submitted
     addBookForm.addEventListener('submit', function(event) {
         debugger;
@@ -199,32 +226,87 @@
         //clear what is already in the table
         // target display area
         const libraryLog = document.getElementById('libraryLogTable');
-        // clear old content first
-        libraryLog.innerHTML = ` <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Number of Pages</th>
-                <th>Have you read this book?</th>
-                <th>Change Read Status</th>
-                <th>Delete Book</th>
-            </tr>`;
-        //refresh the array
-        displayLibraryBooks();
+        refreshArrayOfBooks();
         //clear the form
         addBookForm.reset();
         // console.log(this.id) PROBLEM-> this refers to the form in this case, how do i get it to select the object being made?
     });
 
 //delete button for the books
-    //define target
-    const deleteBook = document.getElementById("deleteButton");
-    deleteBook.addEventListener("click", function(){
-        const bookIdNumber = newLibraryBook[this].bookID;
-        const wholeBook = document.getElementById(bookIdNumber)
-    })
-    // deleteBook.addEventListener("click", function(event){
+    //define target using event delegation, so first grab the whole table
+    const libraryLog = document.getElementById('libraryLogTable');
+    //monitor for a click event
+    libraryLog.addEventListener('click', function(event) {
+        // check to see if the delete button was clicked
+        if (event.target.classList.contains('deleteButton')) {
+            // get the row the button belongs to
+            const row = event.target.closest('tr');
+            console.log(row);
+            const bookID = row.id;
+            console.log(bookID)
+            //pop off the array
+            bookLibraryArray.pop(bookID);
+           refreshArrayOfBooks();
+        } 
+    });
 
-    // });
+    //need a different function for checked instead of clicked
+     libraryLog.addEventListener('change', function(event) {
+        // check to see if the delete button was clicked
+        if (event.target.classList.contains('readStatusCheckBox')) {
+             //select the element of readYN
+            console.log('checkbox clicked')
+            //this is pseudo code to work out my thought process
+            //store the target in a variable
+            const checkBox = event.target;
+            //check if that variable is checked, if yes:
+            if (checkBox.checked){
+                //grab the whole row/object
+                const row = event.target.closest('tr');
+                //then select the <td> element under readYN
+                const readDisplayStatus = row.querySelector('.readYN');
+                //change the innerHTML to no
+                readDisplayStatus.innerHTML = "Yes"
+            } else {
+                //grab the whole row/object
+                const row = event.target.closest('tr');
+                //then select the <td> element under readYN
+                const readDisplayStatus = row.querySelector('.readYN');
+                //change the innerHTML to no
+                readDisplayStatus.innerHTML = "No"
+            }
+        }
+     })
+
+
+
+
+
+
+
+
+        //refresh the array
+        // displayLibraryBooks();
+        // //clear the form
+        // addBookForm.reset();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //calling all the functions!
