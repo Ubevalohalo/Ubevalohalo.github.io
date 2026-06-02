@@ -35,6 +35,9 @@ function createNavBar() {
                 <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
                     <img src="linkedInIconDarkMode.png">
                 </a>
+                <a href="https://github.com/Ubevalohalo" target="_blank">
+                    <img src="githubIcon.png">
+                </a>
 
                 <a href="resume.html">
                     <img src="resumeIconDarkMode.png">
@@ -89,6 +92,12 @@ function createFooter() {
                             <a href="http://www.linkedin.com/in/isabellaepena" target="_blank">
                                 <img src="linkedInIconDarkMode.png">
                                 <h3>LinkedIn</h3>
+                                </a>
+                        </div>
+                        <div id="github">
+                            <a href="https://github.com/Ubevalohalo" target="_blank">
+                                <img src="githubIcon.png">
+                                <h3>GitHub</h3>
                                 </a>
                         </div>
                         <div id="resume">
