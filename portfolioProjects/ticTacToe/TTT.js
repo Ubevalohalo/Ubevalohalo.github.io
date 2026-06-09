@@ -1,11 +1,11 @@
 function ticTacToeGame(){
   //this function makes the grid--------------------------------------------------------------------
   const board = [
-  [' ', ' ', 'O'],
   [' ', ' ', ' '],
-  [' ', 'X', ' ']
+  [' ', ' ', ' '],
+  [' ', ' ', 'x ']
   ];
-
+  const matrix = '';
   function drawBoard(matrix) {
     //matrix is just the board rows. this loops through every row in the board, index 0, 1, 2
     matrix.forEach((row, index) => {
@@ -19,23 +19,38 @@ function ticTacToeGame(){
     });
     return matrix;
   }
-drawBoard(board);
+  drawBoard(board);
   //end grid function--------------------------------------------------------------------
+
+
   //this is how you access each cell
-  // console.log(board[2][1]);
-  // console.log(board[0][2]);
+  console.log(board[2][2]);
+  console.log(board.length);
+
+
   //function to assign a number value to each cell--------------------------------------------------------------------
-  function assignCellNumbers(){
-    for (let boardRow = 0; boardRow < board; boardRow++){
-      for (let cell = 0; cell < matrix; cell++){
-        let cellNumber = cell++;
-        console.log(cellNumber);
+  function assignCellNumbers(board){
+    for (let r = 0; r < board.length; r++){
+      // console.log('a row');
+      for (let c = 0; c < board[r].length; c++){
+        console.log(c);
       }
     }
   }
-assignCellNumbers();
-
+assignCellNumbers(board);
 
   //end cell identification function--------------------------------------------------------------------
+
+
+
+  //end of the entire game
 }
 ticTacToeGame();
+/*terminal nodes
+  1: put this in the terminal to get in the right folder
+    cd portfolioProjects\ticTacToe
+  2: run the file 
+    node TTT.js
+  3. 
+
+*/
