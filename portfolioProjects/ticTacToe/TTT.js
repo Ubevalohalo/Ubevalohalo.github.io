@@ -3,7 +3,7 @@ function ticTacToeGame(){
   const board = [
   [' ', ' ', ' '],
   [' ', ' ', ' '],
-  [' ', ' ', 'x ']
+  [' ', ' ', ' ']
   ];
   const matrix = '';
   function drawBoard(matrix) {
@@ -24,16 +24,17 @@ function ticTacToeGame(){
 
 
   //this is how you access each cell
-  console.log(board[2][2]);
-  console.log(board.length);
+  // console.log(board[2][2]);
+  // console.log(board.length);
 
 
   //function to assign a number value to each cell--------------------------------------------------------------------
   function assignCellNumbers(board){
+    let cellNumber = 0;
     for (let r = 0; r < board.length; r++){
-      // console.log('a row');
       for (let c = 0; c < board[r].length; c++){
-        console.log(c);
+        cellNumber++
+        console.log('cell ' + cellNumber);
       }
     }
   }
