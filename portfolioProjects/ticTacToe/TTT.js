@@ -19,7 +19,7 @@ function ticTacToeGame(){
     });
     return matrix;
   }
-  drawBoard(board);
+
   //end grid function--------------------------------------------------------------------
 
 
@@ -34,18 +34,25 @@ function ticTacToeGame(){
     for (let r = 0; r < board.length; r++){
       for (let c = 0; c < board[r].length; c++){
         cellNumber++
-        console.log('cell ' + cellNumber);
+        // console.log('cell ' + cellNumber);
       }
     }
   }
 assignCellNumbers(board);
-
   //end cell identification function--------------------------------------------------------------------
 
 
-
+  //function to manipulate cell contents
+  function placeMark(cellNumber, mark) {
+    const row = Math.floor((cellNumber - 1) / 3);
+    const col = (cellNumber - 1) % 3;
+    board[row][col] = mark;
+  }
+placeMark(5, 'X');
   //end of the entire game
+drawBoard(board);
 }
+
 ticTacToeGame();
 /*terminal nodes
   1: put this in the terminal to get in the right folder
