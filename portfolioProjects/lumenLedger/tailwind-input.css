@@ -1,1 +1,97 @@
 @import "tailwindcss";
+
+/* ============================================================
+   Lumen Ledger — Tailwind v4 theme
+   Drop-in input file: point the Tailwind CLI at this file and
+   every token below becomes a utility (bg-ink, text-cream,
+   font-display, shadow-glow, rounded-pill, ...).
+   ============================================================ */
+
+@theme {
+  /* ---- Colors ---- */
+  --color-page: #5e4f73;        /* muted dark purple page background */
+  --color-ink: #2e2a3e;         /* dark navy-purple: nav, footer, goal bodies */
+  --color-inktext: #232030;     /* body text on light surfaces */
+  --color-card: #ffffff;        /* card surfaces */
+  --color-periwinkle: #a6c2f2;  /* summary cards, pills, goal headers */
+  --color-azure: #6a9bf5;       /* spending bars, "$80 left" pills */
+  --color-cream: #f3e5a6;       /* signature yellow accent */
+  --color-ember: #d23c3c;       /* overspend red */
+  --color-sand: #e9e6e0;        /* breakdown line-item pills */
+  --color-muted: #6f6a7a;       /* secondary text */
+
+  /* ---- Fonts ---- */
+  --font-display: Georgia, "Times New Roman", Times, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+
+  /* ---- Glow (rule: every yellow element gets this) ---- */
+  --shadow-glow: 0 0 12px 2px rgba(243, 229, 166, 0.55);
+
+  /* ---- Radii ---- */
+  --radius-card: 20px;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  body {
+    @apply bg-page font-sans text-inktext antialiased;
+  }
+}
+
+@layer components {
+  /* ---- Cards ---- */
+  .card {
+    @apply rounded-card bg-card px-5 py-6;
+  }
+  .card-title {
+    @apply mb-[18px] font-display text-[31px] font-bold text-inktext;
+  }
+
+  /* ---- Nav pills ---- */
+  .pill {
+    @apply rounded-pill border border-white/15 px-[18px] py-2 text-sm
+           font-medium text-white/80 no-underline transition-all duration-200;
+  }
+  .pill:hover {
+    @apply -translate-y-0.5 text-white shadow-glow;
+  }
+  .pill-active {
+    @apply rounded-pill border border-cream bg-cream px-[18px] py-2 text-sm
+           font-semibold text-ink no-underline shadow-glow;
+  }
+
+  /* ---- Buttons ---- */
+  /* Outline pill button, glows on hover (matches "View all") */
+  .btn-ghost {
+    @apply mx-auto block cursor-pointer rounded-pill border border-white/25
+           bg-transparent px-7 py-2.5 text-sm font-semibold text-white
+           transition-all duration-200;
+  }
+  .btn-ghost:hover {
+    @apply -translate-y-0.5 shadow-glow;
+  }
+  /* Solid cream pill button, always glowing */
+  .btn-solid {
+    @apply cursor-pointer rounded-pill border border-cream bg-cream px-7 py-2.5
+           text-sm font-bold text-ink shadow-glow transition-all duration-200;
+  }
+  .btn-solid:hover {
+    @apply -translate-y-0.5 brightness-105;
+  }
+
+  /* ---- Progress bar (set fill width inline, e.g. style="width:94%") ---- */
+  .progress {
+    @apply relative h-[30px] w-full overflow-hidden rounded-pill bg-white;
+  }
+  .progress-fill {
+    @apply h-full rounded-pill bg-periwinkle;
+  }
+
+  /* ---- Small stat pill, e.g. "$80 left" / "$21 Over" ---- */
+  .stat-pill-left {
+    @apply rounded-pill bg-azure px-3 py-1 text-xs font-bold whitespace-nowrap text-white;
+  }
+  .stat-pill-over {
+    @apply rounded-pill bg-ember px-3 py-1 text-xs font-bold whitespace-nowrap text-white;
+  }
+}
