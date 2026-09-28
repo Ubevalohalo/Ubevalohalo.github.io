@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Ubevalohalo/Ubevalohalo.github.io/issues"
   },
-  "homepage": "https://github.com/Ubevalohalo/Ubevalohalo.github.io#readme"
+  "homepage": "https://github.com/Ubevalohalo/Ubevalohalo.github.io#readme",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
 }
