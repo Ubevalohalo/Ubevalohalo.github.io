@@ -30,6 +30,9 @@
   /* ---- Radii ---- */
   --radius-card: 20px;
   --radius-pill: 999px;
+
+  /* ---- Breakpoints (md: is Tailwind's default 768px) ---- */
+  --breakpoint-desktop: 1100px;
 }
 
 @layer base {
@@ -95,3 +98,24 @@
     @apply rounded-pill bg-ember px-3 py-1 text-xs font-bold whitespace-nowrap text-white;
   }
 }
+
+/* CSS-only interactivity (no JS): checkbox/label toggles.
+   Deliberately UNLAYERED so they win over utilities in the cascade. */
+#menu-toggle:checked ~ .mobile-menu { display: block; }
+#menu-toggle:checked ~ .datestrip .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle:checked ~ .datestrip .hamburger span:nth-child(2) { opacity: 0; }
+#menu-toggle:checked ~ .datestrip .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+@media (min-width: 768px) {
+  #menu-toggle:checked ~ .mobile-menu { display: none; }
+}
+#summary-toggle:checked ~ .summary-collapsible { grid-template-rows: 1fr; }
+#summary-toggle:checked ~ .net-row { border-top: 1px solid rgba(35, 32, 48, 0.12); }
+#summary-toggle:checked ~ .net-row .chevron { transform: rotate(90deg); }
+#reminders-toggle:checked ~ .reminders-expandable { grid-template-rows: 1fr; }
+#reminders-toggle:checked ~ .reminders-expandable .reminders-expandable-inner { padding-top: 14px; }
+#reminders-toggle:checked ~ .reminders-bar .rtriangle { transform: rotate(90deg); }
+.goal-card.is-extra { display: none; }
+.goals-toggle:checked ~ .goals-row .goal-card.is-extra { display: block; }
+.goals-toggle:checked ~ .view-all-goals .label-view { display: none; }
+.view-all-goals .label-less { display: none; }
+.goals-toggle:checked ~ .view-all-goals .label-less { display: inline; }
