@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Dashboard | Lumen Ledger</title>
+<link rel="stylesheet" href="tailwind.css">
+</head>
+<body>
+<div class="desktop:hidden">
+
+<div class="page"><input type="checkbox" id="menu-toggle" class="sr-only" aria-label="Toggle navigation menu">
+
+  
+  <header class="page-head">
+    <h1 class="page-title">September 2026</h1>
+    <p class="page-sub">Tuesday, September 22</p>
+  </header>
+
+  <div class="datestrip">
+    <label class="hamburger" aria-label="Toggle navigation menu" for="menu-toggle">
+      <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+    </label>
+    <p class="datestrip-date">Tuesday, September 22</p>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="menu-link-active" aria-current="page"><span class="menu-word">Dashboard</span></a>
+    <a href="ledger.html" class="menu-link">Ledger</a>
+    <a href="settings.html" class="menu-link">Settings</a>
+  </nav>
+
+
+
+  
+  <nav class="pillnav">
+    <a href="#" class="pill-active">
+      <span class="pill-word">Dashboard</span>
+    </a>
+    <a href="#" class="pill">Ledger</a>
+    <a href="#" class="pill">Settings</a>
+  </nav>
+
+  <main class="content">
+
+    <div class="top-grid">
+    
+    <section class="net-card" id="summaryCard"><input type="checkbox" id="summary-toggle" class="sr-only" aria-label="Show full breakdown">
+      <div class="summary-collapsible">
+        <div class="overflow-hidden min-h-0">
+          <div class="net-line">
+            <span class="net-label">Total In</span>
+            <span class="net-value">$4,387.36</span>
+          </div>
+          <div class="net-line-div">
+            <span class="net-label">Total Out</span>
+            <span class="net-value">$3,853.15</span>
+          </div>
+        </div>
+      </div>
+      <label class="net-row" for="summary-toggle">
+        <span class="net-label">Net</span>
+        <span class="net-value-wrap">
+          <span class="net-value">$534.22</span>
+          <span class="chevron" aria-hidden="true">▶</span>
+        </span>
+      </label>
+    </section>
+
+
+    <section class="rem-card-collapse" id="remindersCard"><input type="checkbox" id="reminders-toggle" class="sr-only" aria-label="Expand reminders">
+      <label class="reminders-bar" for="reminders-toggle">
+        <h2 class="rem-title">Reminders<span class="text-ember">!</span></h2>
+        <span class="rtriangle" aria-hidden="true">▶</span>
+      </label>
+      <div class="reminders-expandable">
+        <div class="reminders-expandable-inner">
+  <div class="rem-scroll">
+  <div>
+    <p class="group-label-over">Overdue
+<span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/11 done">
+              <span class="text-[15px]">• Pay Credit Card 09/11</span>
+              <span class="rem-check"></span>
+            </label>
+          </div>
+          <div class="mt-5">
+            <p class="group-label">Today <span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/22 done">
+              <span class="text-[15px]">• Pay Credit Card 09/22</span>
+              <span class="rem-check"></span>
+            </label>
+          </div>
+          <div class="mt-5">
+            <p class="group-label">Upcoming <span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 10/11 done">
+              <span class="text-[15px]">• Pay Credit Card 10/11</span>
+              <span class="rem-check"></span>
+            </label>
+                </div>
+      </div>
+      <a href="#" class="rem-link-end">View Task History</a>
+    </div>
+  </div>
+</section>
+
+    
+<section class="rem-card" aria-label="Reminders">
+
+
+    
+    <section class="rem-card" aria-label="Reminders">
+      <div class="rem-head">
+        <h2 class="rem-title">Reminders</h2>
+         <a href="#" class="rem-link">View Task History</a>
+      </div>
+      <div class="rem-scroll">
+      <div>
+        <p class="group-label-over">Overdue<span class="text-[12px] text-inktext">▾</span></p>
+        <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/11 done">
+          <span class="text-[15px]">• Pay Credit Card 09/11</span>
+          <span class="rem-check"></span>
+        </label>
+      </div>
+      <div class="mt-5">
+        <p class="group-label">Today <span class="text-[12px] text-inktext">▾</span></p>
+        <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/22 done">
+          <span class="text-[15px]">• Pay Credit Card 09/22</span>
+          <span class="rem-check"></span>
+        </label>
+      </div>
+      </div>
+    </section>
+    </div>
+
+    <div class="mid-grid">
+
+    
+    <section class="card md:col-[1/-1]">
+      <h2 class="card-title">Current Spending</h2>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Going Out</span>
+        <div class="spend-track"><div class="spend-fill-over"></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+    </section>
+
+    
+    <section class="card mt-[26px] md:mt-0">
+      <h2 class="card-title">Financial Breakdown</h2>
+      <div class="pie-wrap">
+        <div class="pie">
+          <div class="pie-label" style="left:72%;top:50%">Savings<br>50%</div>
+          <div class="pie-label-inv" style="left:28%;top:72%">Wants<br>25%</div>
+          <div class="pie-label" style="left:28%;top:28%">Needs<br>25%</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="card fb-card mt-[26px] md:mt-0"><input type="checkbox" id="fb-toggle-m" class="sr-only fb-toggle" aria-label="Show full financial breakdown">
+      <h2 class="card-title">Financial Breakdown</h2>
+      <div class="tabs">
+        <div class="tab-wants">Wants</div>
+        <div class="tab-needs">Needs</div>
+        <div class="tab-save">Savings</div>
+      </div>
+      <div class="chips">
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+       </div>
+  <label for="fb-toggle-m" class="fb-expand-btn">View all</label>
+  <div class="fb-modal" role="dialog" aria-modal="true" aria-label="Full financial breakdown">
+    <label for="fb-toggle-m" class="fb-backdrop" aria-label="Close"></label>
+    <div class="fb-panel">
+      <div class="fb-panel-head">
+        <h2 class="fb-panel-title">Financial Breakdown</h2>
+        <label for="fb-toggle-m" class="fb-close" aria-label="Close">×</label>
+      </div>
+      <div class="tabs">
+        <div class="tab-wants">Wants</div>
+        <div class="tab-needs">Needs</div>
+        <div class="tab-save">Savings</div>
+      </div>
+      <div class="fb-panel-list">
+        <div class="chips">
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 1 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+          <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+    
+<section class="goals"><input type="checkbox" id="goals-toggle-1" class="sr-only goals-toggle" aria-label="Show all saving goals">
+      <h2 class="card-title">Saving Goals</h2>
+      <div class="goals-row goals-grid">
+        <div class="goal-card">
+          <div class="goal-head"><h3>Add Goal</h3></div>
+          <div class="goal-body"><span class="add-plus">+</span></div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-head"><h3>Car Fund</h3></div>
+          <div class="goal-body">
+            <div class="progress">
+              <div class="progress-fill" style="width:94%"></div>
+              <span class="goal-amount">$7,500/8,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-head"><h3>Car Fund</h3></div>
+          <div class="goal-body">
+            <div class="progress">
+              <div class="progress-fill" style="width:94%"></div>
+              <span class="goal-amount">$7,500/8,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card is-extra">
+          <div class="goal-head"><h3>Emergency Fund</h3></div>
+          <div class="goal-body">
+            <div class="progress">
+              <div class="progress-fill" style="width:94%"></div>
+              <span class="goal-amount">$2,400/5,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card is-extra">
+          <div class="goal-head"><h3>Vacation</h3></div>
+          <div class="goal-body">
+            <div class="progress">
+              <div class="progress-fill" style="width:94%"></div>
+              <span class="goal-amount">$900/1,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label type="button" class="view-all-goals btn-ghost" for="goals-toggle-1"><span class="label-view">View all</span><span class="label-less">Show less</span></label>
+    </section>
+  </main>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="appLogoCompact.png" alt="Lumen Ledger logo">
+          <span class="footer-word">Lumen Ledger</span>
+        </div>
+        <p class="footer-tag">Clarity for every dollar.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html" class="flink-active" aria-current="page">Dashboard</a>
+        <a href="ledger.html" class="flink">Ledger</a>
+        <a href="settings.html" class="flink">Settings</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2026 Lumen Ledger · Bringing your budget into the light</p>
+  </div>
+</footer>
+</div>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — September 2026</title>
+<link rel="stylesheet" href="tailwind.css">
+</head>
+<body>
+<div class="desktop:hidden">
+
+<div class="page"><input type="checkbox" id="menu-toggle" class="sr-only" aria-label="Toggle navigation menu">
+
+  
+  <header class="page-head">
+    <h1 class="page-title">September 2026</h1>
+    <p class="page-sub">Tuesday, September 22</p>
+  </header>
+
+  <div class="datestrip">
+    <label class="hamburger" aria-label="Toggle navigation menu" for="menu-toggle">
+      <span class="burger-bar"></span><span class="burger-bar"></span><span class="burger-bar"></span>
+    </label>
+    <p class="datestrip-date">Tuesday, September 22</p>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="menu-link-active" aria-current="page"><span class="menu-word">Dashboard</span></a>
+    <a href="ledger.html" class="menu-link">Ledger</a>
+    <a href="settings.html" class="menu-link">Settings</a>
+  </nav>
+
+
+
+  
+  <nav class="pillnav">
+    <a href="index.html" class="pill-active">
+      <span class="pill-word">Dashboard</span>
+    </a>
+    <a href="ledger.html" class="pill">Ledger</a>
+    <a href="settings.html" class="pill">Settings</a>
+  </nav>
+
+  <main class="content">
+
+    <div class="top-grid">
+    
+    <section class="net-card" id="summaryCard"><input type="checkbox" id="summary-toggle" class="sr-only" aria-label="Show full breakdown">
+      <div class="summary-collapsible">
+        <div class="overflow-hidden min-h-0">
+          <div class="net-line">
+            <span class="net-label">Total In</span>
+            <span class="net-value">$4,387.36</span>
+          </div>
+          <div class="net-line-div">
+            <span class="net-label">Total Out</span>
+            <span class="net-value">$3,853.15</span>
+          </div>
+        </div>
+      </div>
+      <label class="net-row" for="summary-toggle">
+        <span class="net-label">Net</span>
+        <span class="net-value-wrap">
+          <span class="net-value">$534.22</span>
+          <span class="chevron" aria-hidden="true">▶</span>
+        </span>
+      </label>
+    </section>
+
+
+    <section class="rem-card-collapse" id="remindersCard"><input type="checkbox" id="reminders-toggle" class="sr-only" aria-label="Expand reminders">
+      <label class="reminders-bar" for="reminders-toggle">
+        <h2 class="rem-title">Reminders<span class="text-ember">!</span></h2>
+        <span class="rtriangle" aria-hidden="true">▶</span>
+      </label>
+      <div class="reminders-expandable">
+        <div class="reminders-expandable-inner">
+          <div class="rem-scroll">
+          <div>
+            <p class="group-label-over">Overdue <span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/11 done">
+              <span class="text-[15px]">• Pay Credit Card 09/11</span>
+              <span class="rem-check"></span>
+            </label>
+          </div>
+          <div class="mt-5">
+            <p class="group-label">Today <span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/22 done">
+              <span class="text-[15px]">• Pay Credit Card 09/22</span>
+              <span class="rem-check"></span>
+            </label>
+          </div>
+          <div class="mt-5">
+            <p class="group-label">Upcoming <span class="text-[12px] text-inktext">▾</span></p>
+            <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 10/11 done">
+              <span class="text-[15px]">• Pay Credit Card 10/11</span>
+              <span class="rem-check"></span>
+            </label>
+          </div>
+          </div>
+          <a href="#" class="rem-link-end">View Task History</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="rem-card" aria-label="Reminders">
+      <div class="rem-head">
+        <h2 class="rem-title">Reminders</h2>
+        <a href="#" class="rem-link">View Task History</a>
+      </div>
+      <div class="rem-scroll">
+      <div>
+        <p class="group-label-over">Overdue <span class="text-[12px] text-inktext">▾</span></p>
+        <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/11 done">
+          <span class="text-[15px]">• Pay Credit Card 09/11</span>
+          <span class="rem-check"></span>
+        </label>
+      </div>
+      <div class="mt-5">
+        <p class="group-label">Today <span class="text-[12px] text-inktext">▾</span></p>
+        <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/22 done">
+          <span class="text-[15px]">• Pay Credit Card 09/22</span>
+          <span class="rem-check"></span>
+        </label>
+      </div>
+      </div>
+    </section>
+    </div>
+
+    <div class="mid-grid">
+    
+    <section class="card md:col-[1/-1]">
+      <h2 class="card-title">Current Spending</h2>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Going Out</span>
+        <div class="spend-track"><div class="spend-fill-over"></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+      <div class="spend-row">
+        <span class="spend-name">Groceries</span>
+        <div class="spend-track"><div class="spend-fill" style="width:72%"><span class="spend-pill">$80 left</span></div></div>
+      </div>
+    </section>
+
+    
+    <section class="card mt-[26px] md:mt-0">
+      <h2 class="card-title">Spending Split</h2>
+      <div class="pie-wrap">
+        <div class="pie">
+          <div class="pie-label" style="left:72%;top:50%">Savings<br>50%</div>
+          <div class="pie-label-inv" style="left:28%;top:72%">Wants<br>25%</div>
+          <div class="pie-label" style="left:28%;top:28%">Needs<br>25%</div>
+        </div>
+      </div>
+    </section>
+
+    
+        <section class="card fb-card mt-[26px] md:mt-0"><input type="checkbox" id="fb-toggle-m" class="sr-only fb-toggle" aria-label="Show full financial breakdown">
+      <h2 class="card-title">Financial Breakdown</h2>
+      <div class="tabs">
+        <div class="tab-wants">Wants</div>
+        <div class="tab-needs">Needs</div>
+        <div class="tab-save">Savings</div>
+      </div>
+      <div class="chips">
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+      </div>
+      <label for="fb-toggle-m" class="fb-expand-btn">View all</label>
+      <div class="fb-modal" role="dialog" aria-modal="true" aria-label="Full financial breakdown">
+        <label for="fb-toggle-m" class="fb-backdrop" aria-label="Close"></label>
+        <div class="fb-panel">
+          <div class="fb-panel-head">
+            <h2 class="fb-panel-title">Financial Breakdown</h2>
+            <label for="fb-toggle-m" class="fb-close" aria-label="Close">×</label>
+          </div>
+      <div class="tabs">
+        <div class="tab-wants">Wants</div>
+        <div class="tab-needs">Needs</div>
+        <div class="tab-save">Savings</div>
+      </div>
+          <div class="fb-panel-list">
+            <div class="chips">
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Shopping $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Groceries $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+        <div class="chip-row"><span class="chip">Car Fund $200</span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    
+    <section class="goals"><input type="checkbox" id="goals-toggle-1" class="sr-only goals-toggle" aria-label="Show all saving goals">
+      <h2 class="card-title">Saving Goals</h2>
+      <div class="goals-row goals-grid">
+        <div class="goal-card">
+          <div class="goal-head"><h3>Add Goal</h3></div>
+          <div class="goal-body"><button type="button" class="add-plus" aria-label="Add goal">+</button></div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-head"><h3>Car Fund</h3></div>
+          <div class="goal-body">
+            <span class="goal-amount">$7,500/8,000</span>
+            <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Car Fund progress">
+              <div class="progress-fill" style="width:94%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-head"><h3>Car Fund</h3></div>
+          <div class="goal-body">
+            <span class="goal-amount">$7,500/8,000</span>
+            <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Car Fund progress">
+              <div class="progress-fill" style="width:94%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card is-extra">
+          <div class="goal-head"><h3>Emergency Fund</h3></div>
+          <div class="goal-body">
+            <span class="goal-amount">$2,400/5,000</span>
+            <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Emergency Fund progress">
+              <div class="progress-fill" style="width:94%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card is-extra">
+          <div class="goal-head"><h3>Vacation</h3></div>
+          <div class="goal-body">
+            <span class="goal-amount">$900/1,500</span>
+            <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Vacation progress">
+              <div class="progress-fill" style="width:94%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <label type="button" class="view-all-goals btn-ghost" for="goals-toggle-1"><span class="label-view">View all</span><span class="label-less">Show less</span></label>
+    </section>
+  </main>
+
+</div>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="logos/lumen-mark-compact.png" alt="Lumen Ledger logo">
+          <span class="footer-word">Lumen Ledger</span>
+        </div>
+        <p class="footer-tag">Clarity for every dollar.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html" class="flink-active" aria-current="page">Dashboard</a>
+        <a href="ledger.html" class="flink">Ledger</a>
+        <a href="settings.html" class="flink">Settings</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2026 Lumen Ledger · Bringing your budget into the light</p>
+  </div>
+</footer>
+</div>
+
+<div class="hidden desktop:block">
+
+  <div class="flex items-stretch">
+
+    
+    <aside class="sidebar">
+      <img class="side-logo" src="appLogoMain.png" alt="Lumen Ledger logo">
+      <nav class="side-nav">
+        <a href="index.html" class="side-link-active" aria-current="page">Dashboard</a>
+        <a href="ledger.html" class="side-link">Ledger</a>
+        <a href="settings.html" class="side-link">Settings</a>
+      </nav>
+      <div class="side-foot"><span class="side-foot-box"></span>Company Logo</div>
+    </aside>
+
+    
+    <div class="d-col">
+      <header class="topbar">
+        <h1 class="topbar-title">September 2026
+          <svg class="text-inktext shrink-0" viewbox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+          </svg>
+        </h1>
+        <p class="text-[15px]">Tuesday, September 22</p>
+      </header>
+
+      <main class="d-main">
+        <div class="d-grid">
+
+          
+          <div class="col-[1/4] grid grid-cols-3 gap-6">
+            <div class="sum-mini">
+              <span class="sum-label">Total In</span>
+              <span class="sum-amount">$4,387.36</span>
+            </div>
+            <div class="sum-mini">
+              <span class="sum-label">Total Out</span>
+              <span class="sum-amount">$3,853.15</span>
+            </div>
+            <div class="sum-mini">
+              <span class="sum-label">Net</span>
+              <span class="sum-amount">$534.22</span>
+            </div>
+          </div>
+
+          
+          <section class="d-card rem-card-d hidden col-[4/5] row-[1/3] md:flex" aria-label="Reminders">
+            <h2 class="card-title">Reminders</h2>
+            <div class="rem-scroll">
+            <div>
+              <p class="group-label-over">Overdue <span class="text-[12px] text-inktext">▾</span></p>
+              <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/11 done">
+                <span class="text-[15px]">• Pay Credit Card 09/11</span>
+                <span class="rem-check"></span>
+              </label>
+            </div>
+            <div class="mt-5">
+              <p class="group-label">Today <span class="text-[12px] text-inktext">▾</span></p>
+              <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 09/22 done">
+                <span class="text-[15px]">• Pay Credit Card 09/22</span>
+                <span class="rem-check"></span>
+              </label>
+            </div>
+            <div class="mt-5">
+              <p class="group-label">Upcoming <span class="text-[12px] text-inktext">▾</span></p>
+              <label class="rem-row"><input type="checkbox" class="peer sr-only" aria-label="Mark Pay Credit Card 10/11 done">
+                <span class="text-[15px]">• Pay Credit Card 10/11</span>
+                <span class="rem-check"></span>
+              </label>
+            </div>
+            </div>
+            <a href="#" class="rem-link-end">View Task History</a>
+          </section>
+
+          
+          <section class="d-card col-[1/4]">
+            <h2 class="card-title">Current Spending</h2>
+            <table class="spend-table">
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Going Out</td><td class="spend-barcell"><div class="spend-track-d-over"><span class="spend-over-d">$21 Over</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+              <tr><td class="spend-cell">Groceries</td><td class="spend-barcell"><div class="spend-track-d"><span class="spend-pill-d">$80 left</span></div></td></tr>
+            </table>
+          </section>
+
+          
+                    <section class="d-card fb-card col-[1/4]"><input type="checkbox" id="fb-toggle-d" class="sr-only fb-toggle" aria-label="Show full financial breakdown">
+            <h2 class="card-title-center">Financial Breakdown</h2>
+            <p class="card-sub">Per Month</p>
+            <div class="tabs">
+              <div class="tab-wants">Wants</div>
+              <div class="tab-needs">Needs</div>
+              <div class="tab-save">Savings</div>
+            </div>
+            <div class="chips">
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+            </div>
+            <label for="fb-toggle-d" class="fb-expand-btn">View all</label>
+            <div class="fb-modal" role="dialog" aria-modal="true" aria-label="Full financial breakdown">
+              <label for="fb-toggle-d" class="fb-backdrop" aria-label="Close"></label>
+              <div class="fb-panel">
+                <div class="fb-panel-head">
+                  <h2 class="fb-panel-title">Financial Breakdown</h2>
+                  <label for="fb-toggle-d" class="fb-close" aria-label="Close">×</label>
+                </div>
+            <div class="tabs">
+              <div class="tab-wants">Wants</div>
+              <div class="tab-needs">Needs</div>
+              <div class="tab-save">Savings</div>
+            </div>
+                <div class="fb-panel-list">
+                  <div class="chips">
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Shopping</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Groceries</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+              <div class="chip-col">
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+                <div class="chip-row"><span class="chip-d"><span>Car Fund</span><span>$200</span></span><svg class="chip-edit" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></div>
+              </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          
+          <section class="d-card col-[4/5]">
+            <h2 class="card-title-center">Spending Split</h2>
+            <div class="pie-wrap">
+              <div class="pie">
+                <div class="pie-label" style="left:72%;top:40%;right:16%">Savings<br>50%</div>
+                <div class="pie-label-inv" style="left:20%;top:72%;bottom:20%">Wants<br>25%</div>
+                <div class="pie-label" style="left:20%;top:20%">Needs<br>25%</div>
+              </div>
+            </div>
+          </section>
+
+          
+          <section class="d-card col-[1/-1]"><input type="checkbox" id="goals-toggle-2" class="sr-only goals-toggle" aria-label="Show all saving goals">
+            <h2 class="card-title-center">Saving Goals</h2>
+            <div class="goals-row goals-grid">
+              <div class="goal-card">
+                <div class="goal-head">Add Goal</div>
+                <div class="goal-body"><button type="button" class="add-plus" aria-label="Add goal">+</button></div>
+              </div>
+              <div class="goal-card">
+                <div class="goal-head">Car Fund</div>
+                <div class="goal-body">
+                  <span class="goal-amount">$7,500/8,000</span>
+                  <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Car Fund progress">
+                    <div class="progress-fill" style="width:94%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="goal-card">
+                <div class="goal-head">Car Fund</div>
+                <div class="goal-body">
+                  <span class="goal-amount">$7,500/8,000</span>
+                  <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Car Fund progress">
+                    <div class="progress-fill" style="width:94%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="goal-card">
+                <div class="goal-head">Car Fund</div>
+                <div class="goal-body">
+                  <span class="goal-amount">$7,500/8,000</span>
+                  <div class="progress" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="Car Fund progress">
+                    <div class="progress-fill" style="width:94%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="goal-card is-extra">
+                <div class="goal-head">Emergency Fund</div>
+                <div class="goal-body">
+                  <span class="goal-amount">$2,400/5,000</span>
+                  <div class="progress" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" aria-label="Emergency Fund progress">
+                    <div class="progress-fill" style="width:48%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="goal-card is-extra">
+                <div class="goal-head">Vacation</div>
+                <div class="goal-body">
+                  <span class="goal-amount">$900/1,500</span>
+                  <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Vacation progress">
+                    <div class="progress-fill" style="width:60%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <label type="button" class="view-all-goals btn-ghost" for="goals-toggle-2"><span class="label-view">View all</span><span class="label-less">Show less</span></label>
+          </section>
+
+        </div>
+      </main>
+
+      
+      
+    </div>
+  </div>
+
+  <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img class="footer-logo" src="logos/lumen-mark-compact.png" alt="Lumen Ledger logo">
+            <div>
+              <p class="footer-word">Lumen Ledger</p>
+              <p class="footer-tag">Clarity for every dollar.</p>
+            </div>
+          </div>
+          <nav class="footer-nav">
+            <a href="index.html" class="flink-active" aria-current="page">Dashboard</a>
+            <a href="ledger.html" class="flink">Ledger</a>
+            <a href="settings.html" class="flink">Settings</a>
+          </nav>
+        </div>
+        <p class="footer-copy">© 2026 Lumen Ledger · Bringing your budget into the light</p>
+      </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
+2026 Lumen Ledger · Bringing your budget into the light</p>
+      </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
