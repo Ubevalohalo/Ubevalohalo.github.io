@@ -4,45 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Lumen Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--THIS IS THE GOOGLE FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Quintessential&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>This Month/This Year <img src=""></h1>
-        <p>Today's Date</p>
+      <div class="mainHeading">
+        <h1 class="heading">This Month/This Year</h1>
+        <img src="imgPlaceholder.PNG" class="calendar">
+      </div>
+      <div class="mainHeadingEmpty">
+      </div>
+      <div class="mainHeadingTodaysDate">
+        <p class="todaysDate">Today's Date</p>
+      </div>
     </header>
-    <nav>
-        <img src="" alt="Main Logo">
-        <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="ledger.html">Ledger</a></li>
-            <li><a href="settings.html">Settings</a></li>
+    <nav class="mainNav">
+        <img src="appLogoCompact.PNG" class="mainNavLogo" alt="Main Logo">
+        <ul class ="mainNavList">
+            <li class ="mainNavItem" ><a href="index.html">Dashboard</a></li>
+            <li class ="mainNavItem" ><a href="ledger.html">Ledger</a></li>
+            <li class ="mainNavItem" ><a href="settings.html">Settings</a></li>
         </ul>
-        <section id="myCompany">
-        <img src="" alt="Company Logo">
-        <p>My Company</p>
+        <section class="myCompany">
+          <img src="imgPlaceholder.PNG" class="companyLogo" alt="Company Logo">
+          <p class="companyTitle">My Company</p>
         </section>
     </nav>
     <main>
       <!--NET VALUES AT A GLACE SECTION START-->
-        <section id="netAtGlance">
+        <section id="netAtGlance" class="card">
           <div id="totalIn">
-            <sub>Total In</sub>
-            <h2>$0.00</h2>
+            <h2 class="heading">Total In</h2>
+            <p>$0.00</p>
           </div>
            <div id="totalOut">
-            <sub>Total Out</sub>
-            <h2>$0.00</h2>
+            <h2 class="heading">Total Out</h2>
+            <p>$0.00</p>
           </div>
           <div id="net">
-            <sub>Net</sub>
-            <h2>$0.00</h2>
+            <h2 class="heading">Net</h2>
+            <p>$0.00</p>
           </div>
         </section>
         <!--NET VALUES AT A GLACE SECTION END-->
 
         <!--REMINDERS SECTION START-->
-        <section id="reminders">
-          <h2>Reminders</h2>
+        <section id="reminders" class="card">
+          <h2 class="heading">Reminders</h2>
           <div id="overdueReminders">
             <h3>Overdue</h3>
             <ul class="reminderList">
@@ -67,8 +79,8 @@
         <!--REMINDERS SECTION END-->
 
         <!--CURRENT SPENDING SECTION START-->
-        <section id="currentSpending">
-            <h2>Current Spending</h2>
+        <section id="currentSpending" class="card">
+            <h2 class="heading">Current Spending</h2>
             <div id="spendingChart">
               <!--this is one bar on the chart-->
               <div class="chartBar">
@@ -129,8 +141,8 @@
         <!--CURRENT SPENDING SECTION END-->
 
         <!--FINANCIAL BREAKDOWN SECTION START-->
-        <section id="financialBreakdown">
-            <h2>Financial Breakdown</h2>
+        <section id="financialBreakdown" class="card">
+            <h2 class="heading">Financial Breakdown</h2>
             <div id="breakdownChart">
               <!--wants-->
               <div id="wants">
@@ -185,13 +197,13 @@
         </section>
         <!--FINANCIAL BREAKDOWN SECTION END-->
 
-        <!--SPENDING SPLIT SECTION START-->
-        <section id="spendingSplit">
+        <!--SPENDING SPLIT SECTION START -- THIS STILL NEEDS A LOT OF WORK -->
+        <section id="spendingSplit" class="card">
             <div class="pieChartCard" role="application" aria-label="Spending Split Pie Chart">
               <div class="chart-wrap">
 
                 <svg id="pie" viewBox="0 0 320 320" role="img" aria-label="Pie chart showing spending split">
-                  <title id="pieTitle">Spending Split</title>
+                  <title id="pieTitle" class="heading">Spending Split</title>
                   <g transform="translate(160,160) rotate (-90)"></g>
                 </svg>
 
@@ -204,22 +216,103 @@
         <!--SPENDING SPLIT SECTION END-->
 
         <!--SAVING GOALS SECTION START-->
-        <section id="savingGoals">
+        <section id="savingGoals" class="card">
           <div id="savingsHeader">
-            <h2>Saving Goals</h2>
+            <h2 class="heading">Saving Goals</h2>
             <a href="***">+</a><!--this is to add a goal-->
           </div>
-          <div class="savingGoalCard">
-            
+          <div class="goalContainer">
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Image">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="savingGoalCard">
+              <h3>Sample Goal</h3>
+              <div class = "goalContainer">
+                <img src="imgPlaceholder.PNG" alt="Goal Icon">
+                <div class= "progressLine">
+                    <p>$0.00 / $0.00</p>
+                    <span></span>
+                </div>
+              </div>
+            </div>
           </div>
-
+         <div id="goalExpand">
+            <a href="***">View All Goals</a>
+         </div>
         </section>
         <!--SAVING GOALS SECTION END-->
     </main>
     <footer>
         <section id="compactLogoSect">
-            <img src="" alt="Compact Logo">
-            <h2>Lumen Ledger</h2>
+            <img src="appLogoCompact.png" class="appLogo" alt="Compact Logo">
+            <h2 class="heading">Lumen Ledger</h2>
             <p>Clarity for every dollar.</p>
         </section>
         <nav id="footerNav">
