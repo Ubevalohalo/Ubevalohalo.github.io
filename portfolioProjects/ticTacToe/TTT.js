@@ -1,3 +1,4 @@
+/*
 function ticTacToeGame(){
   //this function makes the grid--------------------------------------------------------------------
   const board = [
@@ -54,6 +55,10 @@ drawBoard(board);
 }
 
 ticTacToeGame();
+
+
+
+*/
 /*terminal nodes
   1: put this in the terminal to get in the right folder
     cd portfolioProjects\ticTacToe
@@ -62,3 +67,43 @@ ticTacToeGame();
   3. 
 
 */
+
+
+
+//this gets the input from the terminal
+const realine = require("node:readline");
+
+//variables to keep track of
+let isXturn = true;
+const board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+//get input from user
+const r1 = readline.createInterface({
+  input: process.stdin, //this meanas the input is coming from the keyboard
+  output: process.stdout //the information comes out in the terminal
+});
+
+//when the code starts
+start();
+async function start(){ //async because we need to wait for the user input
+  while(true){
+    drawboard();
+  }
+}
+function drawboard(){
+  console.clear();
+  console.log("\n-------------");
+
+  for (let i in board){
+    if (i > 0 && i % 3 == 0){
+      console.log("\n-------------");
+    }
+    const n = board[i];
+    if (i % 3 !=0) process.stdout.write(" |");
+    else process.stdout.write("|");
+    process.stdout.write(` ${n}`);
+  }
+
+  conesole.log("\n-------------\n");
+
+}
