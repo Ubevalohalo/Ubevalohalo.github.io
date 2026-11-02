@@ -86,10 +86,75 @@ const r1 = readline.createInterface({
 //when the code starts
 start();
 async function start(){ //async because we need to wait for the user input
-  while(true){
+  while(true) {
     drawboard();
+    //checks for which turn it is. player is X if isXturn is true, otherwise player is O
+    const player = isXturn ? "X" : "O";
+    //get input from user
+    let input;//this stores the input once we validate it
+    const val = await new Promise ((resolve) => 
+      //this sends out a prompt for the user
+      r1.question(`It's ${player}'s turn. \n Enter a number (1-9) or type q to quit.`
+      )
+    );
+    if (val == 'q') process.exit(); //this ends the program if the user types q
+    //check value input is valid
+    if (isNaN(val) || Number(val) < 1 || Number(val) > 9){
+      console.log("WRONG!! Enter a number between 1 and 9.");
+      continue;
+  } else {
+      input = Number(val) - 1;
+  }
+    //make sure that the cell is not already taken
+    if (board[input] === "X" || board[input] === "Y") continue;
+    board[input] = player; //this puts the player's mark in the cell
+
+    if (isWinner(input)){
+      //if true then yes winner, if not then switch turns
+    }
+    isXturn = !isXturn; //this switches turns
   }
 }
+
+//check for a winner
+function isWinner(current, vec = [0,0], count = 1){
+//current is where we are at now on the board
+//vector is what direction we are going to check 
+//count is how many before we run into x
+  const x = current % 3;
+  const y = Math.floor(current / 3);
+  const boardIndex = (y + vec[1]) * 3 + (x + vec[0]);
+  if (boardIndex < 0 || boardIndex > 8) return false; //if we are out of bounds
+  if (board[boardIndex] == current){
+    //try left up 
+    if (isWinner(current, [-1, -1], count)) return true;
+    //try up 
+    if (isWinner(current, [ 0, -1], count)) return true;
+    //try right up 
+    if (isWinner(current, [ 1, -1], count)) return true;
+    //try left
+    if (isWinner(current, [-1,  0], count)) return true; 
+    //try right
+    if (isWinner(current, [1,  0], count)) return true; 
+    //try left down
+    if (isWinner(current, [-1,  1], count)) return true; 
+    //try down
+    if (isWinner(current, [0,  1], count)) return true; 
+    //try right down
+    if (isWinner(current, [1,  1], count)) return true; 
+  } else {
+    if (board[boardIndex] == board[current]) {
+      
+    }
+  }
+
+
+
+
+
+
+
+
 
 
 //this draws the board
