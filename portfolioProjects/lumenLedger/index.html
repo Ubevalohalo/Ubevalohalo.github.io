@@ -9,17 +9,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Quintessential&display=swap" rel="stylesheet">
+    <style>
+    main {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin: 0;         
+    }
+    #netAtGlance{
+      grid-column: 1/4;
+      grid-row: 1/2;
+      display: flex;
+      width: 90%;
+      gap: 1rem;
+      height: fit-content;
+    }
+    #netAtGlance div{
+      background-color: #98B9F2;
+      padding: 1rem;
+      flex: 1
+    }
+    #reminders{
+      grid-column: 4/6;
+      grid-row: 1/2;
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      height: fit-content;
+    }
+    #currentSpending {
+      display: none;
+    }
+    #financialBreakdown {
+      display: none;
+    }
+    #spendingSplit {
+      display: none;
+    }
+    #savingGoals {
+      display: none;
+    }
+    </style>
 </head>
 <body>
     <header>
       <div class="mainHeading">
-        <h1 class="heading">This Month/This Year</h1>
+        <h1 class="heading">Dashboard</h1>
+        <div class="date">
+          <h2 class="heading">Month/Year</h2>
         <img src="imgPlaceholder.PNG" class="calendar">
-      </div>
-      <div class="mainHeadingEmpty">
-      </div>
-      <div class="mainHeadingTodaysDate">
-        <p class="todaysDate">Today's Date</p>
+        </div>
       </div>
     </header>
     <nav class="mainNav">
@@ -38,15 +78,15 @@
       <!--NET VALUES AT A GLACE SECTION START-->
         <section id="netAtGlance" class="card">
           <div id="totalIn">
-            <h2 class="heading">Total In</h2>
+            <h2>Total In</h2>
             <p>$0.00</p>
           </div>
            <div id="totalOut">
-            <h2 class="heading">Total Out</h2>
+            <h2>Total Out</h2>
             <p>$0.00</p>
           </div>
           <div id="net">
-            <h2 class="heading">Net</h2>
+            <h2>Net</h2>
             <p>$0.00</p>
           </div>
         </section>
@@ -54,7 +94,7 @@
 
         <!--REMINDERS SECTION START-->
         <section id="reminders" class="card">
-          <h2 class="heading">Reminders</h2>
+          <h2>Reminders</h2>
           <div id="overdueReminders">
             <h3>Overdue</h3>
             <ul class="reminderList">
@@ -80,7 +120,7 @@
 
         <!--CURRENT SPENDING SECTION START-->
         <section id="currentSpending" class="card">
-            <h2 class="heading">Current Spending</h2>
+            <h2>Current Spending</h2>
             <div id="spendingChart">
               <!--this is one bar on the chart-->
               <div class="chartBar">
@@ -142,7 +182,7 @@
 
         <!--FINANCIAL BREAKDOWN SECTION START-->
         <section id="financialBreakdown" class="card">
-            <h2 class="heading">Financial Breakdown</h2>
+            <h2>Financial Breakdown</h2>
             <div id="breakdownChart">
               <!--wants-->
               <div id="wants">
@@ -218,7 +258,7 @@
         <!--SAVING GOALS SECTION START-->
         <section id="savingGoals" class="card">
           <div id="savingsHeader">
-            <h2 class="heading">Saving Goals</h2>
+            <h2>Saving Goals</h2>
             <a href="***">+</a><!--this is to add a goal-->
           </div>
           <div class="goalContainer">
@@ -312,7 +352,7 @@
     <footer>
         <section id="compactLogoSect">
             <img src="appLogoCompact.png" class="appLogo" alt="Compact Logo">
-            <h2 class="heading">Lumen Ledger</h2>
+            <h2>Lumen Ledger</h2>
             <p>Clarity for every dollar.</p>
         </section>
         <nav id="footerNav">

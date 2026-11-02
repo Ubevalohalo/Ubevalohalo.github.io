@@ -1,131 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ledger | Lumen Ledger</title>
-<link rel="stylesheet" href="tailwind.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger | Lumen Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--THIS IS THE GOOGLE FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Quintessential&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <div class="flex items-stretch">
-
-    <aside class="sidebar">
-      <img class="side-logo" src="appLogoMain.png" alt="Lumen Ledger logo">
-      <nav class="side-nav">
-        <a href="index.html" class="side-link" aria-current="page">Dashboard</a>
-        <a href="ledger.html" class="side-link-active" >Ledger</a>
-        <a href="settings.html" class="side-link">Settings</a>
-      </nav>
-      <div class="side-foot"><span class="side-foot-box"></span>Company Logo</div>
-    </aside>
-
-    <div class="d-col">
-      <header class="topbar">
-        <h1 class="topbar-title">September 2026
-          <svg class="text-inktext shrink-0" viewbox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <rect x="3" y="4" width="18" height="17" rx="2"></rect>
-            <line x1="3" y1="9" x2="21" y2="9"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-          </svg>
-        </h1>
-        <p class="text-[15px]">Tuesday, September 22</p>
-      </header>
-
-      <main class="ledger-main">
-        <section class="ledger-card">
-          <div class="ledger-head">
-            <h2 class="ledger-title">Transactions</h2>
-            <div class="ledger-sums">
-              <div class="sum-mini">
-                <span class="sum-label">Total In</span>
-                <span class="sum-amount">$4,387.36</span>
-              </div>
-              <div class="sum-mini">
-                <span class="sum-label">Total Out</span>
-                <span class="sum-amount">$3,853.15</span>
-              </div>
-              <div class="sum-mini">
-                <span class="sum-label">Net</span>
-                <span class="sum-amount">$534.22</span>
-              </div>
-            </div>
-          </div>
-
-          <table class="ledger-table">
-            <thead>
-              <tr>
-                <th class="ledger-th">Date</th>
-                <th class="ledger-th">Entity</th>
-                <th class="ledger-th">Description</th>
-                <th class="ledger-th">Category</th>
-                <th class="ledger-th">+/-</th>
-                <th class="ledger-th">Amount</th>
-                <th class="ledger-th">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="ledger-td">09/10/26</td>
-                <td class="ledger-td">Brandy Melville</td>
-                <td class="ledger-td">Shopping with Ate</td>
-                <td class="ledger-td">Going Out</td>
-                <td class="ledger-td"><span class="flow-icon flow-out"></span></td>
-                <td class="ledger-td">42.59</td>
-                <td class="ledger-td"><span class="status-pill status-unpaid">Unpaid</span></td>
-              </tr>
-              <tr>
-                <td class="ledger-td">09/11/26</td>
-                <td class="ledger-td">Venmo</td>
-                <td class="ledger-td">Gift from Mommy</td>
-                <td class="ledger-td">Income</td>
-                <td class="ledger-td"><span class="flow-icon flow-in"></span></td>
-                <td class="ledger-td">100</td>
-                <td class="ledger-td"><span class="status-pill status-pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td class="ledger-td">09/12/26</td>
-                <td class="ledger-td">Trader Joe's</td>
-                <td class="ledger-td">Snacks</td>
-                <td class="ledger-td">Groceries</td>
-                <td class="ledger-td"><span class="flow-icon flow-out"></span></td>
-                <td class="ledger-td">12.49</td>
-                <td class="ledger-td"><span class="status-pill status-paid">Paid</span></td>
-              </tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-              <tr><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td><td class="ledger-td"></td></tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img class="footer-logo" src="appLogoCompact.png" alt="Lumen Ledger logo">
-          <div>
-            <p class="footer-word">Lumen Ledger</p>
-            <p class="footer-tag">Clarity for every dollar.</p>
-          </div>
+    <header>
+      <div class="mainHeading">
+        <h1 class="heading">Ledger</h1>
+        <div class="date">
+          <h2 class="heading">Month/Year</h2>
+        <img src="imgPlaceholder.PNG" class="calendar">
         </div>
-        <nav class="footer-nav">
-          <a href="index.html" class="flink-active" aria-current="page">Dashboard</a>
-            <a href="ledger.html" class="flink">Ledger</a>
-            <a href="settings.html" class="flink">Settings</a>
-        </nav>
       </div>
-      <p class="footer-copy">© 2026 Lumen Ledger · Bringing your budget into the light</p>
-    </div>
-  </footer>
-
+    </header>
+    <nav class="mainNav">
+        <img src="appLogoCompact.PNG" class="mainNavLogo" alt="Main Logo">
+        <ul class ="mainNavList">
+            <li class ="mainNavItem" ><a href="index.html">Dashboard</a></li>
+            <li class ="mainNavItem" ><a href="ledger.html">Ledger</a></li>
+            <li class ="mainNavItem" ><a href="settings.html">Settings</a></li>
+        </ul>
+        <section class="myCompany">
+          <img src="imgPlaceholder.PNG" class="companyLogo" alt="Company Logo">
+          <p class="companyTitle">My Company</p>
+        </section>
+    </nav>
+    <main>
+     
+    </main>
+    <footer>
+        <section id="compactLogoSect">
+            <img src="appLogoCompact.png" class="appLogo" alt="Compact Logo">
+            <h2 class="heading">Lumen Ledger</h2>
+            <p>Clarity for every dollar.</p>
+        </section>
+        <nav id="footerNav">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="ledger.html">Ledger</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <section id="footerRights">
+            <p>© 2026 Lumen Ledger · Bringing your budget into the light</p>
+        </section>
+    </footer>
 </body>
 </html>

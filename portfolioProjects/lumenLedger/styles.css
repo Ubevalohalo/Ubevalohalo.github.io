@@ -1,4 +1,14 @@
-
+/*
+Colors:
+    - deep indigo #2e2a3e
+    - light blue #98B9F2
+    - purple #5e4f73
+    - regular yellow #f3e5a6
+    - yellow glow #f0e9d8
+    - red 
+    - green
+    - cream #fdfdfa
+*/
 
 /*PAGE BASICS*/
 img {
@@ -12,7 +22,7 @@ img {
 }
 body {
     display: grid;
-    grid-template-rows: 1fr 50fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr 9fr;
     margin: 0;
 }
@@ -26,31 +36,25 @@ header{
     /*styling*/
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
     margin: 1rem;
 
 }
 .mainHeading {
     padding: auto;
     display: flex;
-    align-self: flex-start;
+    justify-content: space-between;
+    width: 100%;
 }   
+.date{
+    display: flex;
+    padding-right: 1rem;
+}
 .calendar {
     height: 75%;
     margin: auto 1rem;
 }
-.mainHeadingEmpty{
-    flex-grow: 1;
-    flex-shrink: 1;
-}
-.mainHeadingTodaysDate{
-    align-self: flex-end;
-    margin: auto;
-}
-.mainHeadingTodaysDate p{
-    align-self: flex-end;
-    margin: auto;
-}
+
 /*----------------------------------------------*/
 /*NAV*/
 .mainNav{
@@ -117,6 +121,53 @@ header{
     margin: 0;
 }
 /*----------------------------------------------*/
+/*SECONDARY NAV*/
+.secondary-nav {
+    margin: 1rem;
+    padding: 1rem 0rem;
+    background-color: #2e2a3e;
+    overflow: hidden;
+    width: 98%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Tab Button Styling */
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fdfdfa;
+  border-bottom: 2px solid #2e2a3e;
+  transition: border-color 0.4s ease-in-out, transform 0.3s ease;
+}
+
+/* Hover and Active Visual States */
+.tab-btn:hover {
+    border-bottom: 2px solid #f3e5a6;
+    transform: translateY(-8px);
+}
+
+.tab-btn.active {
+  color: #fdfdfa;
+  border-bottom: 2px solid #f3e5a6;
+}
+
+/* Tab Content Visibility Rules */
+.tab-content {
+  display: none;
+  padding: 20px 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/*----------------------------------------------*/
 /*MAIN*/
 main{
     grid-column: 2/3;
@@ -138,7 +189,9 @@ main{
     font-family: "Quintessential", serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 200%; /*this may need to change later*/
+    font-size: 3em; /*this may need to change later*/
+    padding: 0;
+    margin: 0;
 }
 .button{
 
