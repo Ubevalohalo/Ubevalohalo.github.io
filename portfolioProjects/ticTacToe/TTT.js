@@ -90,6 +90,9 @@ async function start(){ //async because we need to wait for the user input
     drawboard();
   }
 }
+
+
+//this draws the board
 function drawboard(){
   console.clear();
   console.log("\n-------------");
@@ -104,6 +107,7 @@ function drawboard(){
     process.stdout.write(` ${n}`);
   }
 
-  conesole.log("\n-------------\n");
+  console.log("\n-------------\n");
 
 }
+
