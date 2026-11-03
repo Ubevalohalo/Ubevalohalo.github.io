@@ -9,6 +9,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=Quintessential&display=swap" rel="stylesheet">
+    <style>
+        table {
+            bor1der-radius: 1rem;
+            ma1rgin: auto;
+            pa1dding: 0.5rem;
+            width: 100%;
+            background-color: #fdfdfa;
+            borde1r-radius: 1rem;
+            paddi1ng: 1rem;
+            mar1gin: 0.5rem;
+            
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,7 +46,50 @@
         </section>
     </nav>
     <main>
-     
+    <!-- transaction log tr = row, th = header, td = data cell -->
+        <table id="libraryLogTable">
+            <tr>
+                <th>Date</th>
+                <th>Entity</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>+/-</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </table>
+        
+
+
+
+
+
+
+        <!--
+        <button command="show-modal" commandfor="myDialog">Add a New Book!</button>
+        <dialog id="myDialog">
+            <p>Add your new book here:</p>
+            <form id="addBookForm">
+                <label for="title">Title:</label><br>
+                <input type="text" id="bookTitle" name="bookTitle" required><br>
+                <br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="bookAuthor" name="bookAuthor" required><br>
+                <br>
+                <label for="numberOfPages">Number of pages:</label><br>
+                <input type="number" id="pageAmount" min="1" name="pageAmount" required><br>
+                <br>
+                <label for="title">Have you read this book yet?</label><br>
+                    <input type="radio" id="readYes" name="readYN" value="Yes" required>
+                    <label for="readYes">Yes</label><br>
+                    <input type="radio" id="readNo" name="readYN" value="No">
+                    <label for="readNo">No</label><br>
+                    <br>
+                <button type="button" id="close">Never mind</button>
+                <button type="submit">Submit This Book</button>
+            </form>
+        </dialog> 
+        -->
     </main>
     <footer>
         <section id="compactLogoSect">
