@@ -1,4 +1,3 @@
-//this gets the input from the terminal
 const readline = require("node:readline");
 
 //variables to keep track of
